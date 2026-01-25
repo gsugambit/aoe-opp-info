@@ -1,0 +1,4298 @@
+{
+  "total_count": 434,
+  "page": 1,
+  "per_page": 50,
+  "count": 50,
+  "offset": 0,
+  "filters": {
+    "leaderboard": null,
+    "since": null,
+    "profile_ids": [
+      3861757
+    ],
+    "opponent_profile_id": null,
+    "opponent_profile_ids": null
+  },
+  "games": [
+    {
+      "game_id": 217234606,
+      "started_at": "2026-01-25T08:00:02.000Z",
+      "updated_at": "2026-01-25T09:15:32.062Z",
+      "duration": 1789,
+      "map": "Atacama",
+      "kind": "qm_4v4",
+      "leaderboard": "qm_4v4",
+      "mmr_leaderboard": "qm_4v4",
+      "season": 0,
+      "server": "Australia",
+      "patch": 7445,
+      "average_rating": 839,
+      "average_rating_deviation": null,
+      "average_mmr": 839,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 20342543,
+              "name": "120170845",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "golden_horde",
+              "civilization_randomized": false,
+              "rating": 782,
+              "rating_diff": -16,
+              "mmr": 782,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 22348565,
+              "name": "IvanM",
+              "country": "ru",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 843,
+              "rating_diff": -16,
+              "mmr": 843,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 9725293,
+              "name": "LT BLACKWID0W",
+              "country": "au",
+              "result": "loss",
+              "civilization": "house_of_lancaster",
+              "civilization_randomized": false,
+              "rating": 862,
+              "rating_diff": -16,
+              "mmr": 862,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 18386087,
+              "name": "flyinget",
+              "country": "cn",
+              "result": "win",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": true,
+              "rating": 869,
+              "rating_diff": 16,
+              "mmr": 869,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 14749995,
+              "name": "gluanfensun5478",
+              "country": "ar",
+              "result": "win",
+              "civilization": "golden_horde",
+              "civilization_randomized": false,
+              "rating": 807,
+              "rating_diff": 16,
+              "mmr": 807,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 11992690,
+              "name": "小黑屋学者",
+              "country": "cn",
+              "result": "win",
+              "civilization": "house_of_lancaster",
+              "civilization_randomized": false,
+              "rating": 881,
+              "rating_diff": 16,
+              "mmr": 881,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 23547159,
+              "name": "NAK_GameMaster",
+              "country": "vn",
+              "result": "win",
+              "civilization": "order_of_the_dragon",
+              "civilization_randomized": false,
+              "rating": 830,
+              "rating_diff": 32,
+              "mmr": 830,
+              "mmr_diff": 32,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 217230828,
+      "started_at": "2026-01-25T07:25:36.000Z",
+      "updated_at": "2026-01-25T08:42:17.719Z",
+      "duration": 1646,
+      "map": "Danube River",
+      "kind": "qm_3v3",
+      "leaderboard": "qm_3v3",
+      "mmr_leaderboard": "qm_3v3",
+      "season": 0,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 953,
+      "average_rating_deviation": 35,
+      "average_mmr": 953,
+      "average_mmr_deviation": 35,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 15177421,
+              "name": "KUMGUZZLA",
+              "country": "au",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 950,
+              "rating_diff": 15,
+              "mmr": 950,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 15179164,
+              "name": "Bob Dobbs",
+              "country": "au",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 975,
+              "rating_diff": 15,
+              "mmr": 975,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 15178528,
+              "name": "SUPPLE GENIUS",
+              "country": "au",
+              "result": "win",
+              "civilization": "malians",
+              "civilization_randomized": false,
+              "rating": 937,
+              "rating_diff": 31,
+              "mmr": 937,
+              "mmr_diff": 31,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 24200644,
+              "name": "Masta_CJ.TTV",
+              "country": "us",
+              "result": "loss",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 986,
+              "rating_diff": -25,
+              "mmr": 986,
+              "mmr_diff": -25,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 886,
+              "rating_diff": -22,
+              "mmr": 886,
+              "mmr_diff": -22,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 986,
+              "rating_diff": -25,
+              "mmr": 986,
+              "mmr_diff": -25,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 217227181,
+      "started_at": "2026-01-25T06:50:53.000Z",
+      "updated_at": "2026-01-25T07:30:39.316Z",
+      "duration": 1389,
+      "map": "Himeyama",
+      "kind": "qm_3v3",
+      "leaderboard": "qm_3v3",
+      "mmr_leaderboard": "qm_3v3",
+      "season": 0,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 914,
+      "average_rating_deviation": null,
+      "average_mmr": 914,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 863,
+              "rating_diff": 23,
+              "mmr": 863,
+              "mmr_diff": 23,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 24200644,
+              "name": "Masta_CJ.TTV",
+              "country": "us",
+              "result": "win",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 960,
+              "rating_diff": 26,
+              "mmr": 960,
+              "mmr_diff": 26,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 960,
+              "rating_diff": 26,
+              "mmr": 960,
+              "mmr_diff": 26,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 14444567,
+              "name": "Thaadi8737",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 886,
+              "rating_diff": -15,
+              "mmr": 886,
+              "mmr_diff": -15,
+              "input_type": "controller"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 24744137,
+              "name": "她说她是晒黑的",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 24594295,
+              "name": "KRIYE",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 900,
+              "rating_diff": -23,
+              "mmr": 900,
+              "mmr_diff": -23,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 217222616,
+      "started_at": "2026-01-25T06:07:27.000Z",
+      "updated_at": "2026-01-25T07:06:37.020Z",
+      "duration": 851,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 860,
+      "average_rating_deviation": null,
+      "average_mmr": 910,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 691,
+              "rating_diff": 27,
+              "mmr": 779,
+              "mmr_diff": 18,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": 920,
+              "rating_diff": 27,
+              "mmr": 1008,
+              "mmr_diff": 18,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 24478765,
+              "name": "Lady Killer",
+              "country": "vn",
+              "result": "loss",
+              "civilization": "jeanne_darc",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 15140038,
+              "name": "juliplbonatti",
+              "country": "de",
+              "result": "loss",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 968,
+              "rating_diff": -28,
+              "mmr": 942,
+              "mmr_diff": -18,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 217047511,
+      "started_at": "2026-01-24T07:58:44.000Z",
+      "updated_at": "2026-01-24T08:42:57.347Z",
+      "duration": 1800,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "Europe (W)",
+      "patch": 7445,
+      "average_rating": 697,
+      "average_rating_deviation": 144,
+      "average_mmr": 849,
+      "average_mmr_deviation": 142,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 9776366,
+              "name": "李知恩",
+              "country": "ar",
+              "result": "loss",
+              "civilization": "ayyubids",
+              "civilization_randomized": false,
+              "rating": 721,
+              "rating_diff": -8,
+              "mmr": 978,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 22087457,
+              "name": "Hamburger",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 494,
+              "rating_diff": -12,
+              "mmr": 657,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 672,
+              "rating_diff": 19,
+              "mmr": 766,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": 901,
+              "rating_diff": 19,
+              "mmr": 995,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216878437,
+      "started_at": "2026-01-23T05:55:55.000Z",
+      "updated_at": "2026-01-23T06:43:27.446Z",
+      "duration": 2052,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "UK",
+      "patch": 7445,
+      "average_rating": 820,
+      "average_rating_deviation": 84,
+      "average_mmr": 897,
+      "average_mmr_deviation": 82,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 696,
+              "rating_diff": -24,
+              "mmr": 781,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 925,
+              "rating_diff": -24,
+              "mmr": 1010,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 9469016,
+              "name": "-Bataan",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 858,
+              "rating_diff": 23,
+              "mmr": 875,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 2981703,
+              "name": "我大哥路伟",
+              "country": "cn",
+              "result": "win",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 799,
+              "rating_diff": 29,
+              "mmr": 920,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216876443,
+      "started_at": "2026-01-23T05:24:40.000Z",
+      "updated_at": "2026-01-23T06:03:33.507Z",
+      "duration": 1649,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 792,
+      "average_rating_deviation": 81,
+      "average_mmr": 867,
+      "average_mmr_deviation": 82,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 675,
+              "rating_diff": 21,
+              "mmr": 767,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 904,
+              "rating_diff": 21,
+              "mmr": 996,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 2148005,
+              "name": "PunkAss",
+              "country": "us",
+              "result": "loss",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 795,
+              "rating_diff": -22,
+              "mmr": 853,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 236024,
+              "name": "Super.Bright",
+              "country": "us",
+              "result": "loss",
+              "civilization": "order_of_the_dragon",
+              "civilization_randomized": false,
+              "rating": 795,
+              "rating_diff": -22,
+              "mmr": 853,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216874666,
+      "started_at": "2026-01-23T04:56:22.000Z",
+      "updated_at": "2026-01-23T07:03:36.725Z",
+      "duration": 1514,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 840,
+      "average_rating_deviation": 86,
+      "average_mmr": 918,
+      "average_mmr_deviation": 84,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24318601,
+              "name": "TiltorBeTilted",
+              "country": "us",
+              "result": "win",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 869,
+              "rating_diff": 20,
+              "mmr": 941,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 24271005,
+              "name": "DONofCON",
+              "country": "us",
+              "result": "win",
+              "civilization": "delhi_sultanate",
+              "civilization_randomized": false,
+              "rating": 869,
+              "rating_diff": 20,
+              "mmr": 941,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 925,
+              "rating_diff": -21,
+              "mmr": 1009,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 696,
+              "rating_diff": -21,
+              "mmr": 780,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216740671,
+      "started_at": "2026-01-22T05:40:01.000Z",
+      "updated_at": "2026-01-22T07:54:11.397Z",
+      "duration": 1797,
+      "map": "Canyon",
+      "kind": "qm_4v4",
+      "leaderboard": "qm_4v4",
+      "mmr_leaderboard": "qm_4v4",
+      "season": 0,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 946,
+      "average_rating_deviation": null,
+      "average_mmr": 946,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 17536838,
+              "name": "TrueReaganomics",
+              "country": "us",
+              "result": "win",
+              "civilization": "knights_templar",
+              "civilization_randomized": false,
+              "rating": 950,
+              "rating_diff": 13,
+              "mmr": 950,
+              "mmr_diff": 13,
+              "input_type": "controller"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 8728251,
+              "name": "Daniel IR4797",
+              "country": "us",
+              "result": "win",
+              "civilization": "order_of_the_dragon",
+              "civilization_randomized": false,
+              "rating": 1035,
+              "rating_diff": 13,
+              "mmr": 1035,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 8495265,
+              "name": "frantenorioe",
+              "country": "pe",
+              "result": "win",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 981,
+              "rating_diff": 13,
+              "mmr": 981,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 12899981,
+              "name": "Babysniper4405",
+              "country": "mx",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 835,
+              "rating_diff": -13,
+              "mmr": 835,
+              "mmr_diff": -13,
+              "input_type": "controller"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 7848767,
+              "name": "TheeCHEDDA",
+              "country": "ca",
+              "result": "loss",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 864,
+              "rating_diff": -13,
+              "mmr": 864,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 1323148,
+              "name": "lets to the moon",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 972,
+              "rating_diff": -13,
+              "mmr": 972,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 11133083,
+              "name": "医保",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "byzantines",
+              "civilization_randomized": false,
+              "rating": 988,
+              "rating_diff": -13,
+              "mmr": 988,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216737850,
+      "started_at": "2026-01-22T04:55:51.000Z",
+      "updated_at": "2026-01-22T06:03:46.314Z",
+      "duration": 2335,
+      "map": "Sunkenlands",
+      "kind": "qm_4v4",
+      "leaderboard": "qm_4v4",
+      "mmr_leaderboard": "qm_4v4",
+      "season": 0,
+      "server": "Korea",
+      "patch": 7445,
+      "average_rating": 842,
+      "average_rating_deviation": null,
+      "average_mmr": 842,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 6190271,
+              "name": "小蛇",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "ayyubids",
+              "civilization_randomized": false,
+              "rating": 880,
+              "rating_diff": -19,
+              "mmr": 880,
+              "mmr_diff": -19,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 4526279,
+              "name": "legon18",
+              "country": "us",
+              "result": "loss",
+              "civilization": "house_of_lancaster",
+              "civilization_randomized": false,
+              "rating": 931,
+              "rating_diff": -19,
+              "mmr": 931,
+              "mmr_diff": -19,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 7848767,
+              "name": "TheeCHEDDA",
+              "country": "ca",
+              "result": "loss",
+              "civilization": "order_of_the_dragon",
+              "civilization_randomized": false,
+              "rating": 883,
+              "rating_diff": -19,
+              "mmr": 883,
+              "mmr_diff": -19,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 7189262,
+              "name": "VenousPrawn8492",
+              "country": "es",
+              "result": "loss",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 839,
+              "rating_diff": -19,
+              "mmr": 839,
+              "mmr_diff": -19,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 11681927,
+              "name": "芝雪士豹",
+              "country": "cn",
+              "result": "win",
+              "civilization": "macedonian_dynasty",
+              "civilization_randomized": false,
+              "rating": 714,
+              "rating_diff": 38,
+              "mmr": 714,
+              "mmr_diff": 38,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 19232485,
+              "name": "薯ki薯ki大薯ki",
+              "country": "cn",
+              "result": "win",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 840,
+              "rating_diff": 19,
+              "mmr": 840,
+              "mmr_diff": 19,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 19750003,
+              "name": "WoolyJewel72448",
+              "country": "cn",
+              "result": "win",
+              "civilization": "zhu_xis_legacy",
+              "civilization_randomized": false,
+              "rating": 807,
+              "rating_diff": 19,
+              "mmr": 807,
+              "mmr_diff": 19,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216616588,
+      "started_at": "2026-01-21T09:35:41.000Z",
+      "updated_at": "2026-01-21T10:55:56.004Z",
+      "duration": 2313,
+      "map": "High View",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "UK",
+      "patch": 7445,
+      "average_rating": 682,
+      "average_rating_deviation": 17,
+      "average_mmr": 719,
+      "average_mmr_deviation": 19,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 23734556,
+              "name": "oguzacar01",
+              "country": "tr",
+              "result": "loss",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 699,
+              "rating_diff": -22,
+              "mmr": 700,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 665,
+              "rating_diff": 21,
+              "mmr": 738,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216614631,
+      "started_at": "2026-01-21T09:09:02.000Z",
+      "updated_at": "2026-01-21T11:14:14.240Z",
+      "duration": 1360,
+      "map": "Cliffside",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "Australia",
+      "patch": 7445,
+      "average_rating": 614,
+      "average_rating_deviation": 73,
+      "average_mmr": 765,
+      "average_mmr_deviation": 13,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 687,
+              "rating_diff": -22,
+              "mmr": 752,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 24508341,
+              "name": "atdat2k3",
+              "country": "vn",
+              "result": "win",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 541,
+              "rating_diff": 32,
+              "mmr": 778,
+              "mmr_diff": 29,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216611443,
+      "started_at": "2026-01-21T08:22:43.000Z",
+      "updated_at": "2026-01-21T09:16:02.021Z",
+      "duration": 2411,
+      "map": "Gorge",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "Australia",
+      "patch": 7445,
+      "average_rating": 648,
+      "average_rating_deviation": 18,
+      "average_mmr": 719,
+      "average_mmr_deviation": 19,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 21041146,
+              "name": "Naresh",
+              "country": "in",
+              "result": "loss",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 629,
+              "rating_diff": -22,
+              "mmr": 700,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 666,
+              "rating_diff": 21,
+              "mmr": 738,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216610110,
+      "started_at": "2026-01-21T08:03:19.000Z",
+      "updated_at": "2026-01-21T08:32:49.046Z",
+      "duration": 1072,
+      "map": "Sunkenlands",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 660,
+      "average_rating_deviation": 19,
+      "average_mmr": 736,
+      "average_mmr_deviation": 14,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24408977,
+              "name": "Xie316",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "byzantines",
+              "civilization_randomized": false,
+              "rating": 679,
+              "rating_diff": -26,
+              "mmr": 750,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 641,
+              "rating_diff": 25,
+              "mmr": 721,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216606812,
+      "started_at": "2026-01-21T07:15:31.000Z",
+      "updated_at": "2026-01-21T08:40:53.595Z",
+      "duration": 2632,
+      "map": "Gorge",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 603,
+      "average_rating_deviation": 62,
+      "average_mmr": 738,
+      "average_mmr_deviation": 2,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24200333,
+              "name": "枪驴",
+              "country": "cn",
+              "result": "win",
+              "civilization": "order_of_the_dragon",
+              "civilization_randomized": false,
+              "rating": 541,
+              "rating_diff": 32,
+              "mmr": 740,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 665,
+              "rating_diff": -24,
+              "mmr": 736,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216604808,
+      "started_at": "2026-01-21T06:45:10.000Z",
+      "updated_at": "2026-01-21T08:52:35.985Z",
+      "duration": 1419,
+      "map": "High View",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 717,
+      "average_rating_deviation": 27,
+      "average_mmr": 746,
+      "average_mmr_deviation": 6,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24532581,
+              "name": "Pastor",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 744,
+              "rating_diff": 24,
+              "mmr": 740,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 690,
+              "rating_diff": -25,
+              "mmr": 752,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216603463,
+      "started_at": "2026-01-21T06:26:02.000Z",
+      "updated_at": "2026-01-21T06:55:03.358Z",
+      "duration": 995,
+      "map": "Sunkenlands",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 718,
+      "average_rating_deviation": 1,
+      "average_mmr": 746,
+      "average_mmr_deviation": 24,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 717,
+              "rating_diff": -27,
+              "mmr": 770,
+              "mmr_diff": -18,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 24532581,
+              "name": "Pastor",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 718,
+              "rating_diff": 26,
+              "mmr": 722,
+              "mmr_diff": 18,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216601105,
+      "started_at": "2026-01-21T05:49:54.000Z",
+      "updated_at": "2026-01-21T06:56:54.154Z",
+      "duration": 1481,
+      "map": "Ocean Gateway",
+      "kind": "qm_3v3",
+      "leaderboard": "qm_3v3",
+      "mmr_leaderboard": "qm_3v3",
+      "season": 0,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 983,
+      "average_rating_deviation": null,
+      "average_mmr": 983,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 22499066,
+              "name": "milomoosh",
+              "country": "au",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 20480092,
+              "name": "赵赵没烦恼",
+              "country": "cn",
+              "result": "win",
+              "civilization": "chinese",
+              "civilization_randomized": false,
+              "rating": 986,
+              "rating_diff": 13,
+              "mmr": 986,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 9828321,
+              "name": "苒~",
+              "country": "cn",
+              "result": "win",
+              "civilization": "ayyubids",
+              "civilization_randomized": false,
+              "rating": 1076,
+              "rating_diff": 13,
+              "mmr": 1076,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 24200644,
+              "name": "Masta_CJ.TTV",
+              "country": "us",
+              "result": "loss",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 984,
+              "rating_diff": -24,
+              "mmr": 984,
+              "mmr_diff": -24,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 984,
+              "rating_diff": -24,
+              "mmr": 984,
+              "mmr_diff": -24,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 885,
+              "rating_diff": -22,
+              "mmr": 885,
+              "mmr_diff": -22,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216596597,
+      "started_at": "2026-01-21T04:41:25.000Z",
+      "updated_at": "2026-01-21T05:52:36.795Z",
+      "duration": 1639,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 776,
+      "average_rating_deviation": 169,
+      "average_mmr": 917,
+      "average_mmr_deviation": 119,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 18763815,
+              "name": "xX5uperMarioXx",
+              "country": "us",
+              "result": "win",
+              "civilization": "knights_templar",
+              "civilization_randomized": false,
+              "rating": 914,
+              "rating_diff": 28,
+              "mmr": 1048,
+              "mmr_diff": 15,
+              "input_type": "controller"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 22184418,
+              "name": "Stewalew3",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 524,
+              "rating_diff": 35,
+              "mmr": 801,
+              "mmr_diff": 24,
+              "input_type": "controller"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 719,
+              "rating_diff": -23,
+              "mmr": 795,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 948,
+              "rating_diff": -23,
+              "mmr": 1024,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216455030,
+      "started_at": "2026-01-20T04:46:30.000Z",
+      "updated_at": "2026-01-20T06:52:33.002Z",
+      "duration": 1301,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 903,
+      "average_rating_deviation": 125,
+      "average_mmr": 921,
+      "average_mmr_deviation": 86,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 17029326,
+              "name": "ExpertNutter",
+              "country": "us",
+              "result": "win",
+              "civilization": "house_of_lancaster",
+              "civilization_randomized": false,
+              "rating": 1067,
+              "rating_diff": 19,
+              "mmr": 961,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 16587317,
+              "name": "Expertwhackr",
+              "country": "us",
+              "result": "win",
+              "civilization": "golden_horde",
+              "civilization_randomized": false,
+              "rating": 828,
+              "rating_diff": 24,
+              "mmr": 872,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 744,
+              "rating_diff": -25,
+              "mmr": 811,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 973,
+              "rating_diff": -25,
+              "mmr": 1040,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216451580,
+      "started_at": "2026-01-20T03:56:53.000Z",
+      "updated_at": "2026-01-20T05:21:52.295Z",
+      "duration": 2486,
+      "map": "Flankwoods",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 751,
+      "average_rating_deviation": 115,
+      "average_mmr": 930,
+      "average_mmr_deviation": 86,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 718,
+              "rating_diff": 26,
+              "mmr": 794,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 947,
+              "rating_diff": 26,
+              "mmr": 1023,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 560284,
+              "name": "Hoot",
+              "country": "us",
+              "result": "loss",
+              "civilization": "order_of_the_dragon",
+              "civilization_randomized": false,
+              "rating": 672,
+              "rating_diff": -14,
+              "mmr": 921,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 7407837,
+              "name": "Thane-MWB",
+              "country": "us",
+              "result": "loss",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 666,
+              "rating_diff": -11,
+              "mmr": 980,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216449120,
+      "started_at": "2026-01-20T03:22:58.000Z",
+      "updated_at": "2026-01-20T04:04:46.089Z",
+      "duration": 1747,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 847,
+      "average_rating_deviation": 84,
+      "average_mmr": 938,
+      "average_mmr_deviation": 84,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 740,
+              "rating_diff": -22,
+              "mmr": 808,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": 969,
+              "rating_diff": -22,
+              "mmr": 1037,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 18424913,
+              "name": "Tsovvy",
+              "country": "us",
+              "result": "win",
+              "civilization": "knights_templar",
+              "civilization_randomized": false,
+              "rating": 872,
+              "rating_diff": 26,
+              "mmr": 983,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 9885519,
+              "name": "BLOODxcrazer",
+              "country": "us",
+              "result": "win",
+              "civilization": "sengoku_daimyo",
+              "civilization_randomized": false,
+              "rating": 808,
+              "rating_diff": 26,
+              "mmr": 925,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216310262,
+      "started_at": "2026-01-19T05:39:55.000Z",
+      "updated_at": "2026-01-19T06:54:18.909Z",
+      "duration": 1866,
+      "map": "Dry Arabia",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "Korea",
+      "patch": 7445,
+      "average_rating": 804,
+      "average_rating_deviation": 166,
+      "average_mmr": 931,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 7792581,
+              "name": "2333.WK",
+              "country": "cn",
+              "result": "win",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 553,
+              "rating_diff": 42,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 21811552,
+              "name": "猴式智减法",
+              "country": "cn",
+              "result": "win",
+              "civilization": "zhu_xis_legacy",
+              "civilization_randomized": false,
+              "rating": 901,
+              "rating_diff": 26,
+              "mmr": 911,
+              "mmr_diff": 18,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 767,
+              "rating_diff": -27,
+              "mmr": 826,
+              "mmr_diff": -18,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 996,
+              "rating_diff": -27,
+              "mmr": 1055,
+              "mmr_diff": -18,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216307869,
+      "started_at": "2026-01-19T05:05:57.000Z",
+      "updated_at": "2026-01-19T05:43:13.823Z",
+      "duration": 1523,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 732,
+      "average_rating_deviation": null,
+      "average_mmr": 927,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24603930,
+              "name": "Screebz",
+              "country": "us",
+              "result": "loss",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 21525777,
+              "name": "NoobieBoobies",
+              "country": "us",
+              "result": "loss",
+              "civilization": "abbasid_dynasty",
+              "civilization_randomized": false,
+              "rating": 478,
+              "rating_diff": -5,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 745,
+              "rating_diff": 22,
+              "mmr": 812,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": 974,
+              "rating_diff": 22,
+              "mmr": 1041,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 216305618,
+      "started_at": "2026-01-19T04:35:07.000Z",
+      "updated_at": "2026-01-19T06:43:35.890Z",
+      "duration": 1474,
+      "map": "Flankwoods",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 728,
+      "average_rating_deviation": 143,
+      "average_mmr": 887,
+      "average_mmr_deviation": 139,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 5634165,
+              "name": "El Tortillero",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 674,
+              "rating_diff": -4,
+              "mmr": 1015,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 5641838,
+              "name": "El Frijolero",
+              "country": "us",
+              "result": "loss",
+              "civilization": "chinese",
+              "civilization_randomized": false,
+              "rating": 559,
+              "rating_diff": -14,
+              "mmr": 704,
+              "mmr_diff": -19,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 725,
+              "rating_diff": 20,
+              "mmr": 799,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 954,
+              "rating_diff": 20,
+              "mmr": 1028,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215768445,
+      "started_at": "2026-01-16T04:31:42.000Z",
+      "updated_at": "2026-01-16T05:40:00.793Z",
+      "duration": 1519,
+      "map": "Dry Arabia",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "UK",
+      "patch": 7445,
+      "average_rating": 896,
+      "average_rating_deviation": 92,
+      "average_mmr": 965,
+      "average_mmr_deviation": 91,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 744,
+              "rating_diff": -19,
+              "mmr": 811,
+              "mmr_diff": -12,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 973,
+              "rating_diff": -19,
+              "mmr": 1040,
+              "mmr_diff": -12,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3847235,
+              "name": "Atomosx1",
+              "country": "pe",
+              "result": "win",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": 897,
+              "rating_diff": 18,
+              "mmr": 980,
+              "mmr_diff": 12,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 11884149,
+              "name": "Fr1e4nd",
+              "country": "kz",
+              "result": "win",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 969,
+              "rating_diff": 18,
+              "mmr": 1030,
+              "mmr_diff": 12,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215765298,
+      "started_at": "2026-01-16T03:47:54.000Z",
+      "updated_at": "2026-01-16T04:33:45.832Z",
+      "duration": 2076,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 749,
+      "average_rating_deviation": 119,
+      "average_mmr": 912,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24449835,
+              "name": "CQB Spades",
+              "country": "us",
+              "result": "loss",
+              "civilization": "tughlaq_dynasty",
+              "civilization_randomized": false,
+              "rating": 660,
+              "rating_diff": -11,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 16832655,
+              "name": "AtomicAdler",
+              "country": "us",
+              "result": "loss",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 661,
+              "rating_diff": -11,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "controller"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 952,
+              "rating_diff": 21,
+              "mmr": 1026,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 723,
+              "rating_diff": 21,
+              "mmr": 797,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215353490,
+      "started_at": "2026-01-13T05:04:18.000Z",
+      "updated_at": "2026-01-13T07:12:32.235Z",
+      "duration": 1562,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 846,
+      "average_rating_deviation": 110,
+      "average_mmr": 915,
+      "average_mmr_deviation": 84,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 749,
+              "rating_diff": -26,
+              "mmr": 814,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 978,
+              "rating_diff": -26,
+              "mmr": 1043,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 13707420,
+              "name": "WildBoar504",
+              "country": "us",
+              "result": "win",
+              "civilization": "order_of_the_dragon",
+              "civilization_randomized": false,
+              "rating": 931,
+              "rating_diff": 25,
+              "mmr": 928,
+              "mmr_diff": null,
+              "input_type": "controller"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 7338517,
+              "name": "罗尔德",
+              "country": "cn",
+              "result": "win",
+              "civilization": "knights_templar",
+              "civilization_randomized": false,
+              "rating": 724,
+              "rating_diff": 32,
+              "mmr": 873,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215352121,
+      "started_at": "2026-01-13T04:43:58.000Z",
+      "updated_at": "2026-01-13T06:38:20.081Z",
+      "duration": 736,
+      "map": "Dry Arabia",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "India",
+      "patch": 7445,
+      "average_rating": 829,
+      "average_rating_deviation": 83,
+      "average_mmr": 910,
+      "average_mmr_deviation": 83,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 26189,
+              "name": "Romelu",
+              "country": "be",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 839,
+              "rating_diff": -24,
+              "mmr": 932,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 6232130,
+              "name": "Neatvodka",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 795,
+              "rating_diff": null,
+              "mmr": 879,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 726,
+              "rating_diff": 23,
+              "mmr": 799,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 955,
+              "rating_diff": 23,
+              "mmr": 1028,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215350932,
+      "started_at": "2026-01-13T04:27:06.000Z",
+      "updated_at": "2026-01-13T04:55:16.614Z",
+      "duration": 892,
+      "map": "Flankwoods",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 901,
+      "average_rating_deviation": 90,
+      "average_mmr": 939,
+      "average_mmr_deviation": 105,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 749,
+              "rating_diff": -23,
+              "mmr": 814,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 978,
+              "rating_diff": -23,
+              "mmr": 1043,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 6899476,
+              "name": "Mictlantecuhtli",
+              "country": "bz",
+              "result": "win",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 957,
+              "rating_diff": 17,
+              "mmr": 855,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 20640931,
+              "name": "Lynx4:20",
+              "country": "bz",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 919,
+              "rating_diff": 28,
+              "mmr": 1043,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215349425,
+      "started_at": "2026-01-13T04:05:37.000Z",
+      "updated_at": "2026-01-13T04:33:53.095Z",
+      "duration": 943,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 873,
+      "average_rating_deviation": 91,
+      "average_mmr": 943,
+      "average_mmr_deviation": 89,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 1002,
+              "rating_diff": -24,
+              "mmr": 1059,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 773,
+              "rating_diff": -24,
+              "mmr": 830,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 17235830,
+              "name": "Acedian",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 915,
+              "rating_diff": 23,
+              "mmr": 997,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 1899620,
+              "name": "zubb",
+              "country": "us",
+              "result": "win",
+              "civilization": "macedonian_dynasty",
+              "civilization_randomized": false,
+              "rating": 802,
+              "rating_diff": 23,
+              "mmr": 886,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215348430,
+      "started_at": "2026-01-13T03:52:12.000Z",
+      "updated_at": "2026-01-13T04:40:04.090Z",
+      "duration": 338,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 813,
+      "average_rating_deviation": 145,
+      "average_mmr": 952,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24627649,
+              "name": "Razzle Frazzle",
+              "country": "us",
+              "result": "loss",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 609,
+              "rating_diff": -10,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 22693785,
+              "name": "Cpt. Crank",
+              "country": "us",
+              "result": "loss",
+              "civilization": "golden_horde",
+              "civilization_randomized": false,
+              "rating": 923,
+              "rating_diff": -27,
+              "mmr": 1003,
+              "mmr_diff": -18,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 746,
+              "rating_diff": 27,
+              "mmr": 812,
+              "mmr_diff": 18,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 975,
+              "rating_diff": 27,
+              "mmr": 1041,
+              "mmr_diff": 18,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215034887,
+      "started_at": "2026-01-11T07:47:18.000Z",
+      "updated_at": "2026-01-11T09:54:24.305Z",
+      "duration": 1237,
+      "map": "Flankwoods",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "UK",
+      "patch": 7445,
+      "average_rating": 839,
+      "average_rating_deviation": null,
+      "average_mmr": 857,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 724,
+              "rating_diff": 22,
+              "mmr": 797,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 953,
+              "rating_diff": 22,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 23935175,
+              "name": "Crush",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 12320258,
+              "name": "Lin Ba Vege",
+              "country": "hk",
+              "result": "loss",
+              "civilization": "sengoku_daimyo",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": 917,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215029588,
+      "started_at": "2026-01-11T06:59:37.000Z",
+      "updated_at": "2026-01-11T09:20:59.520Z",
+      "duration": 2044,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 937,
+      "average_rating_deviation": 111,
+      "average_mmr": 913,
+      "average_mmr_deviation": 88,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 750,
+              "rating_diff": -26,
+              "mmr": 814,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 979,
+              "rating_diff": -26,
+              "mmr": 1043,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 6899476,
+              "name": "Mictlantecuhtli",
+              "country": "bz",
+              "result": "win",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 970,
+              "rating_diff": 19,
+              "mmr": 850,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 11487574,
+              "name": "Don Pimpo",
+              "country": "bz",
+              "result": "win",
+              "civilization": "jeanne_darc",
+              "civilization_randomized": false,
+              "rating": 1048,
+              "rating_diff": 20,
+              "mmr": 943,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 215025432,
+      "started_at": "2026-01-11T06:21:45.000Z",
+      "updated_at": "2026-01-11T07:09:57.765Z",
+      "duration": 1959,
+      "map": "Dry Arabia",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 838,
+      "average_rating_deviation": 80,
+      "average_mmr": 930,
+      "average_mmr_deviation": 83,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 725,
+              "rating_diff": 25,
+              "mmr": 797,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 954,
+              "rating_diff": 25,
+              "mmr": 1026,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 12186759,
+              "name": "shigo88888",
+              "country": "us",
+              "result": "loss",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 837,
+              "rating_diff": -21,
+              "mmr": 949,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 13618336,
+              "name": "le sparxx",
+              "country": "us",
+              "result": "loss",
+              "civilization": "zhu_xis_legacy",
+              "civilization_randomized": false,
+              "rating": 837,
+              "rating_diff": -21,
+              "mmr": 949,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214659075,
+      "started_at": "2026-01-09T06:53:14.000Z",
+      "updated_at": "2026-01-09T08:55:11.520Z",
+      "duration": 959,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 921,
+      "average_rating_deviation": 110,
+      "average_mmr": 939,
+      "average_mmr_deviation": 172,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 17455616,
+              "name": "SuperDaibo",
+              "country": "us",
+              "result": "win",
+              "civilization": "house_of_lancaster",
+              "civilization_randomized": false,
+              "rating": 915,
+              "rating_diff": 13,
+              "mmr": 738,
+              "mmr_diff": 29,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 15611615,
+              "name": "Miaosika 7625",
+              "country": "ca",
+              "result": "win",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 1044,
+              "rating_diff": 27,
+              "mmr": 1166,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 976,
+              "rating_diff": -22,
+              "mmr": 1040,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 747,
+              "rating_diff": -22,
+              "mmr": 811,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214657235,
+      "started_at": "2026-01-09T06:25:15.000Z",
+      "updated_at": "2026-01-09T06:43:41.071Z",
+      "duration": 258,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 853,
+      "average_rating_deviation": 126,
+      "average_mmr": 947,
+      "average_mmr_deviation": 132,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 770,
+              "rating_diff": -23,
+              "mmr": 826,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 999,
+              "rating_diff": -23,
+              "mmr": 1055,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 18301833,
+              "name": "meo laflamme",
+              "country": "ca",
+              "result": "win",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 953,
+              "rating_diff": 29,
+              "mmr": 1102,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 18430399,
+              "name": "Jean-Marcel-Denis",
+              "country": "ca",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 691,
+              "rating_diff": 27,
+              "mmr": 805,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214653283,
+      "started_at": "2026-01-09T05:27:59.000Z",
+      "updated_at": "2026-01-09T06:32:59.073Z",
+      "duration": 1289,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 911,
+      "average_rating_deviation": 151,
+      "average_mmr": 913,
+      "average_mmr_deviation": 93,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 21466770,
+              "name": "XZZD3831",
+              "country": "hk",
+              "result": "loss",
+              "civilization": "zhu_xis_legacy",
+              "civilization_randomized": false,
+              "rating": 789,
+              "rating_diff": -22,
+              "mmr": 835,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 1894286,
+              "name": "MrMav",
+              "country": "au",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 1126,
+              "rating_diff": -30,
+              "mmr": 963,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 749,
+              "rating_diff": 21,
+              "mmr": 812,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 978,
+              "rating_diff": 21,
+              "mmr": 1041,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214650766,
+      "started_at": "2026-01-09T04:52:36.000Z",
+      "updated_at": "2026-01-09T05:33:49.195Z",
+      "duration": 1780,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 863,
+      "average_rating_deviation": 84,
+      "average_mmr": 926,
+      "average_mmr_deviation": 82,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 5810892,
+              "name": "Shadowstep33",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 879,
+              "rating_diff": -26,
+              "mmr": 934,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 5791518,
+              "name": "Hellfire",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 896,
+              "rating_diff": -26,
+              "mmr": 951,
+              "mmr_diff": -17,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 724,
+              "rating_diff": 25,
+              "mmr": 795,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 953,
+              "rating_diff": 25,
+              "mmr": 1024,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214649395,
+      "started_at": "2026-01-09T04:33:29.000Z",
+      "updated_at": "2026-01-09T05:00:38.173Z",
+      "duration": 962,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 863,
+      "average_rating_deviation": 82,
+      "average_mmr": 936,
+      "average_mmr_deviation": 83,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3467519,
+              "name": "Sernavi6996",
+              "country": "mx",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 846,
+              "rating_diff": 21,
+              "mmr": 926,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 23201248,
+              "name": "Ace_17",
+              "country": "mx",
+              "result": "win",
+              "civilization": "ottomans",
+              "civilization_randomized": false,
+              "rating": 884,
+              "rating_diff": 21,
+              "mmr": 970,
+              "mmr_diff": 14,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 747,
+              "rating_diff": -23,
+              "mmr": 809,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 976,
+              "rating_diff": -23,
+              "mmr": 1038,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214649153,
+      "started_at": "2026-01-09T04:30:03.000Z",
+      "updated_at": "2026-01-09T04:40:32.983Z",
+      "duration": 78,
+      "map": "Gorge",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (E)",
+      "patch": 7445,
+      "average_rating": 837,
+      "average_rating_deviation": null,
+      "average_mmr": 907,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 24470837,
+              "name": "Kobe Bryant",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 2602175,
+              "name": "superme土豆8",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "golden_horde",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 722,
+              "rating_diff": 25,
+              "mmr": 792,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 951,
+              "rating_diff": 25,
+              "mmr": 1021,
+              "mmr_diff": 17,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214355265,
+      "started_at": "2026-01-07T06:26:04.000Z",
+      "updated_at": "2026-01-07T08:19:50.022Z",
+      "duration": 737,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 918,
+      "average_rating_deviation": 114,
+      "average_mmr": 927,
+      "average_mmr_deviation": 81,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 745,
+              "rating_diff": -23,
+              "mmr": 807,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 974,
+              "rating_diff": -23,
+              "mmr": 1036,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 23962950,
+              "name": "骂我的死全家",
+              "country": "cn",
+              "result": "win",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 899,
+              "rating_diff": 22,
+              "mmr": 936,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 24366702,
+              "name": "nzcwdxqa33",
+              "country": "cn",
+              "result": "win",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 1055,
+              "rating_diff": 16,
+              "mmr": 927,
+              "mmr_diff": 21,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214353975,
+      "started_at": "2026-01-07T06:05:43.000Z",
+      "updated_at": "2026-01-07T06:33:53.670Z",
+      "duration": 909,
+      "map": "Prairie",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "Europe (W)",
+      "patch": 7445,
+      "average_rating": 836,
+      "average_rating_deviation": null,
+      "average_mmr": 906,
+      "average_mmr_deviation": null,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3808059,
+              "name": "Marteens",
+              "country": "id",
+              "result": "loss",
+              "civilization": "house_of_lancaster",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 5503935,
+              "name": "Super Unta Kilat",
+              "country": "id",
+              "result": "loss",
+              "civilization": "sengoku_daimyo",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": null,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 721,
+              "rating_diff": 24,
+              "mmr": 791,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 950,
+              "rating_diff": 24,
+              "mmr": 1020,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214351804,
+      "started_at": "2026-01-07T05:32:09.000Z",
+      "updated_at": "2026-01-07T07:41:17.490Z",
+      "duration": 1480,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 771,
+      "average_rating_deviation": 95,
+      "average_mmr": 842,
+      "average_mmr_deviation": 97,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 23560051,
+              "name": "pyropitbullcrew",
+              "country": "ca",
+              "result": "loss",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": 697,
+              "rating_diff": -18,
+              "mmr": 773,
+              "mmr_diff": -11,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 24234078,
+              "name": "Kruushina",
+              "country": "cn",
+              "result": "loss",
+              "civilization": "zhu_xis_legacy",
+              "civilization_randomized": false,
+              "rating": 751,
+              "rating_diff": -18,
+              "mmr": 806,
+              "mmr_diff": -11,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 704,
+              "rating_diff": 17,
+              "mmr": 780,
+              "mmr_diff": 11,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 933,
+              "rating_diff": 17,
+              "mmr": 1009,
+              "mmr_diff": 11,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214200778,
+      "started_at": "2026-01-06T07:07:42.000Z",
+      "updated_at": "2026-01-06T09:09:49.747Z",
+      "duration": 1103,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 804,
+      "average_rating_deviation": 104,
+      "average_mmr": 911,
+      "average_mmr_deviation": 81,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 957,
+              "rating_diff": -24,
+              "mmr": 1024,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 728,
+              "rating_diff": -24,
+              "mmr": 795,
+              "mmr_diff": -15,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 12262128,
+              "name": "Nicolas Fourier",
+              "country": "tw",
+              "result": "win",
+              "civilization": "zhu_xis_legacy",
+              "civilization_randomized": false,
+              "rating": 842,
+              "rating_diff": 23,
+              "mmr": 900,
+              "mmr_diff": 15,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 15596420,
+              "name": "没钱买游戏",
+              "country": "cn",
+              "result": "win",
+              "civilization": "chinese",
+              "civilization_randomized": false,
+              "rating": 689,
+              "rating_diff": 34,
+              "mmr": 926,
+              "mmr_diff": 31,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214198647,
+      "started_at": "2026-01-06T06:35:17.000Z",
+      "updated_at": "2026-01-06T07:13:07.411Z",
+      "duration": 1492,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 869,
+      "average_rating_deviation": 82,
+      "average_mmr": 951,
+      "average_mmr_deviation": 86,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 8632620,
+              "name": "notsmallpaul",
+              "country": "us",
+              "result": "win",
+              "civilization": "knights_templar",
+              "civilization_randomized": false,
+              "rating": 893,
+              "rating_diff": 25,
+              "mmr": 996,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 8191238,
+              "name": "Suponjibobu",
+              "country": "us",
+              "result": "win",
+              "civilization": "golden_horde",
+              "civilization_randomized": false,
+              "rating": 856,
+              "rating_diff": 25,
+              "mmr": 961,
+              "mmr_diff": 13,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 978,
+              "rating_diff": -21,
+              "mmr": 1037,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 749,
+              "rating_diff": -21,
+              "mmr": 808,
+              "mmr_diff": -13,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 214197080,
+      "started_at": "2026-01-06T06:12:32.000Z",
+      "updated_at": "2026-01-06T06:40:36.179Z",
+      "duration": 742,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "UK",
+      "patch": 7445,
+      "average_rating": 835,
+      "average_rating_deviation": null,
+      "average_mmr": 957,
+      "average_mmr_deviation": 84,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 17823802,
+              "name": "普拉蒙斯_official",
+              "country": "cn",
+              "result": "win",
+              "civilization": "holy_roman_empire",
+              "civilization_randomized": false,
+              "rating": null,
+              "rating_diff": null,
+              "mmr": 995,
+              "mmr_diff": null,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 6353624,
+              "name": "volcanotnt",
+              "country": "lt",
+              "result": "win",
+              "civilization": "japanese",
+              "civilization_randomized": false,
+              "rating": 735,
+              "rating_diff": 31,
+              "mmr": 959,
+              "mmr_diff": 27,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "loss",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 1000,
+              "rating_diff": -22,
+              "mmr": 1051,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 771,
+              "rating_diff": -22,
+              "mmr": 822,
+              "mmr_diff": -14,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 213637743,
+      "started_at": "2026-01-03T05:16:45.000Z",
+      "updated_at": "2026-01-03T07:15:27.866Z",
+      "duration": 774,
+      "map": "Mountain Clearing",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "USA (W)",
+      "patch": 7445,
+      "average_rating": 849,
+      "average_rating_deviation": 84,
+      "average_mmr": 923,
+      "average_mmr_deviation": 81,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 748,
+              "rating_diff": 23,
+              "mmr": 806,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 977,
+              "rating_diff": 23,
+              "mmr": 1035,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 15441768,
+              "name": "jackylai651016",
+              "country": "tw",
+              "result": "loss",
+              "civilization": "jeanne_darc",
+              "civilization_randomized": false,
+              "rating": 862,
+              "rating_diff": -24,
+              "mmr": 943,
+              "mmr_diff": -16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 9330262,
+              "name": "DIDIDADA",
+              "country": "id",
+              "result": "loss",
+              "civilization": "zhu_xis_legacy",
+              "civilization_randomized": false,
+              "rating": 809,
+              "rating_diff": -19,
+              "mmr": 909,
+              "mmr_diff": -29,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 213635543,
+      "started_at": "2026-01-03T04:56:19.000Z",
+      "updated_at": "2026-01-03T05:27:04.295Z",
+      "duration": 1081,
+      "map": "Lipany",
+      "kind": "rm_2v2",
+      "leaderboard": "rm_team",
+      "mmr_leaderboard": "rm_2v2",
+      "season": 12,
+      "server": "Europe (W)",
+      "patch": 7445,
+      "average_rating": 800,
+      "average_rating_deviation": 90,
+      "average_mmr": 904,
+      "average_mmr_deviation": 81,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "win",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 725,
+              "rating_diff": 23,
+              "mmr": 790,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 3861729,
+              "name": "BludRainMcbain",
+              "country": "us",
+              "result": "win",
+              "civilization": "mongols",
+              "civilization_randomized": false,
+              "rating": 954,
+              "rating_diff": 23,
+              "mmr": 1019,
+              "mmr_diff": 16,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 17224469,
+              "name": "ppshooter1515",
+              "country": "sg",
+              "result": "loss",
+              "civilization": "chinese",
+              "civilization_randomized": false,
+              "rating": 762,
+              "rating_diff": -18,
+              "mmr": 899,
+              "mmr_diff": -16,
+              "input_type": "controller"
+            }
+          },
+          {
+            "player": {
+              "profile_id": 15772345,
+              "name": "PortedSphinx588",
+              "country": "us",
+              "result": "loss",
+              "civilization": "french",
+              "civilization_randomized": false,
+              "rating": 758,
+              "rating_diff": -17,
+              "mmr": 909,
+              "mmr_diff": -16,
+              "input_type": "controller"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "game_id": 213631104,
+      "started_at": "2026-01-03T04:13:14.000Z",
+      "updated_at": "2026-01-03T05:13:22.111Z",
+      "duration": 969,
+      "map": "Dry Arabia",
+      "kind": "rm_1v1",
+      "leaderboard": "rm_solo",
+      "mmr_leaderboard": "rm_1v1",
+      "season": 12,
+      "server": "UK",
+      "patch": 7445,
+      "average_rating": 752,
+      "average_rating_deviation": 15,
+      "average_mmr": 816,
+      "average_mmr_deviation": 33,
+      "ongoing": false,
+      "just_finished": false,
+      "teams": [
+        [
+          {
+            "player": {
+              "profile_id": 3861757,
+              "name": "GSUGambit",
+              "country": "us",
+              "result": "loss",
+              "civilization": "english",
+              "civilization_randomized": false,
+              "rating": 737,
+              "rating_diff": -20,
+              "mmr": 782,
+              "mmr_diff": -12,
+              "input_type": "keyboard"
+            }
+          }
+        ],
+        [
+          {
+            "player": {
+              "profile_id": 24313303,
+              "name": "skr",
+              "country": "cn",
+              "result": "win",
+              "civilization": "macedonian_dynasty",
+              "civilization_randomized": false,
+              "rating": 767,
+              "rating_diff": 19,
+              "mmr": 849,
+              "mmr_diff": 12,
+              "input_type": "keyboard"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
