@@ -3,4 +3,3 @@ spring:
     name: aoe-opp-info
 aoe4world:
   baseUrl: https://aoe4world.com
-  targetPlayerId: 3861757

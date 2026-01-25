@@ -6,15 +6,9 @@ import com.theboys.aoe.opp.info.dto.internal.GameResult;
 import com.theboys.aoe.opp.info.repository.http.Aoe4WorldRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -27,15 +21,11 @@ public class Aoe4OppService {
 
     private final Aoe4WorldRepository aoe4WorldRepository;
     private final ObjectMapper objectMapper;
-    @Value("${aoe4world.targetPlayerId}")
-    private Long targetPlayerId;
 
-    public void collect() {
+    public List<GameResult> collect(Long targetPlayerId) {
         PlayerDto targetPlayer = aoe4WorldRepository.retrievePlayer(targetPlayerId);
         LOGGER.info("Retrieved target player: {}", targetPlayer);
-        String gamesJson = aoe4WorldRepository.retrieveGames(targetPlayerId, List.of("rm_2v2"));
-        LOGGER.info("Retrieved games JSON: {}", gamesJson);
-        GamesPage gamesPage = objectMapper.readValue(gamesJson, GamesPage.class);
+        GamesPage gamesPage = aoe4WorldRepository.retrieveGames(targetPlayerId, List.of("rm_2v2"));
         LOGGER.info("Retrieved games page: {}", gamesPage);
 
         List<GameResult> gameResults = new LinkedList<>();
@@ -93,22 +83,7 @@ public class Aoe4OppService {
 
                 });
 
-        //LOGGER.info("gameResults: {}", gameResults);
-
-        // create output folder if does not exist
-        String outputFolderName = "build/output";
-        File outputFolder = new File(outputFolderName);
-        if (!outputFolder.exists()) {
-            outputFolder.mkdir();
-        }
-
-        //write file to root directory called game-results-DATE.json
-        String fileName = outputFolderName + "/game-results-" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH-mm-ss")) + ".json";
-        try (FileWriter writer = new FileWriter(fileName)) {
-            writer.write(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(gameResults));
-        } catch (IOException e) {
-            LOGGER.error("Error writing game results to file: {}", e.getMessage());
-        }
+        return gameResults;
 
     }
 
