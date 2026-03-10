@@ -7,6 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -22,21 +23,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class GameSummaryRepository {
 
-    public void scrape() {
-        String profileUrl = "https://aoe4world.com/players/3861757-GSUGambit/games";
-        String userAgent = "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36^";
+    public void scrape(String gamerProfile, String userAgent) {
+        String profileUrl = String.format("https://aoe4world.com/players/%s/games", gamerProfile);
 
         try {
-            LOGGER.info("Fetching HTML from " + profileUrl + "...");
+            LOGGER.info("Fetching HTML from {}...", profileUrl);
 
-            // 1. Fetch and Parse the HTML using Jsoup
             Document doc = Jsoup.connect(profileUrl)
                     .userAgent(userAgent)
-                    .header("Referer", "https://aoe4world.com/players/3861757")
                     .header("sec-fetch-dest", "document")
                     .get();
 
-            LOGGER.info(doc.html());
+            LOGGER.trace(doc.html());
 
             // 2. Extract signed URLs
             // We use a LinkedHashSet to automatically prevent duplicate URLs
@@ -52,32 +50,32 @@ public class GameSummaryRepository {
                 signedUrls.add(fullUrl);
             }
 
-            LOGGER.info("Found " + signedUrls.size() + " signed game URLs! Starting JSON download...\n");
+            LOGGER.info("Found {} signed game URLs! Starting JSON download...", signedUrls.size());
 
             signedUrls.forEach(url -> LOGGER.info("url: {}", url));
 
-
-            //3. Setup Java's built-in HttpClient (Available in Java 11+)
             try (HttpClient client = HttpClient.newHttpClient()) {
 
                 final AtomicInteger counter = new AtomicInteger(1);
                 for (String url : signedUrls) {
 
+
+                    // TODO: for right now we're only receiving first until this is fully supported
                     if (counter.getAndIncrement() > 1) {
+                        //not spamming the server
+                        //Thread.sleep(3000);
                         continue;
                     }
 
                     String actualUrl = url.replace("?", "/summary?camelize=true&");
 
-                    System.out.println("Fetching JSON for: " + actualUrl);
+                    LOGGER.trace("Fetching JSON for: {}", actualUrl);
 
                     // Build the HTTP request
                     HttpRequest request = HttpRequest.newBuilder()
                             .uri(URI.create(actualUrl))
                             .header("User-Agent", userAgent)
                             .header("sec-fetch-dest", "empty")
-                            //.header("Accept", "text/html, text/vnd.turbo-stream.html")
-                            //.header("Accept", "application/json") // Tell the server we want JSON
                             .GET()
                             .build();
 
@@ -87,7 +85,7 @@ public class GameSummaryRepository {
                     if (response.statusCode() == 200) {
 
                         String responseBody = response.body();
-                        LOGGER.info("{}", responseBody);
+                        LOGGER.trace("{} response: {}", actualUrl, responseBody);
 
                         // Extract the game ID from the URL for the filename
                         // NOTE: In Java, split() uses regex, so we must escape the question mark: "\\?"
@@ -95,18 +93,14 @@ public class GameSummaryRepository {
                         String gameId = parts[0];
 
                         // Save the JSON string directly to a file
-                        Path filePath = Paths.get("match_" + gameId + ".json");
+                        String fileName = "matches" + File.separator + "match_" + gameId + ".json";
+                        Path filePath = Paths.get(fileName);
                         Files.writeString(filePath, response.body());
 
-                        System.out.println("  -> Saved match_" + gameId + ".json successfully.");
+                        LOGGER.info("Saved {} successfully.", fileName);
                     } else {
-                        System.out.println("  -> Failed to fetch. Status code: " + response.statusCode());
+                        LOGGER.warn("Failed to fetch from: {} Status code: {}", actualUrl, response.statusCode());
                     }
-
-                    // -------------------------------------------------------------------
-                    // 4. MANDATORY POLITE PAUSE - Keeps their servers happy!
-                    // -------------------------------------------------------------------
-                    Thread.sleep(3000); // Sleep for 3,000 milliseconds (3 seconds)
                 }
             }
 
