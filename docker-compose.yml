@@ -1,0 +1,28 @@
+services:
+  migrations:
+    image: flyway/flyway:10
+    command:
+      -url=jdbc:postgresql://db/aoe_opp_info -locations=filesystem:/dbscripts -schemas=public -user=postgres -password=admin -connectRetries=60 migrate
+    volumes:
+      - .:/dbscripts
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=aoe_opp_info
+    volumes:
+      - data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer:latest
+    ports:
+      - 7777:8080
+
+volumes:
+  data: { }

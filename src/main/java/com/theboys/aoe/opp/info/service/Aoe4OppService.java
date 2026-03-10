@@ -1,8 +1,12 @@
 package com.theboys.aoe.opp.info.service;
 
+import com.theboys.aoe.opp.info.constants.Leaderboard;
+import com.theboys.aoe.opp.info.dto.AutocompleteResponse;
+import com.theboys.aoe.opp.info.dto.AutocompleteResponseDto;
 import com.theboys.aoe.opp.info.dto.GamesPage;
 import com.theboys.aoe.opp.info.dto.PlayerDto;
 import com.theboys.aoe.opp.info.dto.internal.GameResult;
+import com.theboys.aoe.opp.info.exception.InvalidRequestException;
 import com.theboys.aoe.opp.info.repository.http.Aoe4WorldRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +16,6 @@ import tools.jackson.databind.ObjectMapper;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -53,31 +56,28 @@ public class Aoe4OppService {
                         List<GameResult.ResultPlayer> targetResultPlayers = teamPlayers.stream().map(GameResult.ResultPlayer::from).toList();
                         GameResult.ResultTeam targetTeam = GameResult.ResultTeam.builder().players(targetResultPlayers).build();
 
-                        List<GameResult.ResultTeam> loserOpponents = opponentSlots.stream()
-                                .filter(slots -> slots.stream().anyMatch(slot -> "loss".equals(slot.getPlayer().getResult())))
-                                .map(slots -> {
-                                    List<GameResult.ResultPlayer> losers = slots.stream().map(slot -> GameResult.ResultPlayer.from(slot.getPlayer())).toList();
+                        boolean targetTeamWon = teamPlayers.stream().anyMatch(player -> "win".equals(player.getResult()));
+                        List<GameResult.ResultTeam> losingTeams = new LinkedList<>();
 
-                                    return GameResult.ResultTeam.builder().players(losers).build();
-                                })
-                                .collect(Collectors.toList());
-
-                        if ("win".equals(targetTeamPlayer.getResult())) {
+                        if (targetTeamWon) {
                             builder.winningTeam(targetTeam);
                         } else {
-                            loserOpponents.add(targetTeam);
-
-                            GameResult.ResultTeam winnerOpponent = opponentSlots.stream()
-                                    .filter(slots -> slots.stream().anyMatch(slot -> "win".equals(slot.getPlayer().getResult())))
-                                    .map(slots -> {
-                                        List<GameResult.ResultPlayer> losers = slots.stream().map(slot -> GameResult.ResultPlayer.from(slot.getPlayer())).toList();
-
-                                        return GameResult.ResultTeam.builder().players(losers).build();
-                                    })
-                                    .findAny().orElse(null);
-                            builder.winningTeam(winnerOpponent);
+                            losingTeams.add(targetTeam);
                         }
-                        builder.losingTeams(loserOpponents);
+
+                        opponentSlots.forEach(slots -> {
+                            boolean opponentTeamWon = slots.stream().anyMatch(slot -> "win".equals(slot.getPlayer().getResult()));
+                            List<GameResult.ResultPlayer> players = slots.stream().map(slot -> GameResult.ResultPlayer.from(slot.getPlayer())).toList();
+                            GameResult.ResultTeam opponentTeam = GameResult.ResultTeam.builder().players(players).build();
+
+                            if (opponentTeamWon) {
+                                builder.winningTeam(opponentTeam);
+                            } else {
+                                losingTeams.add(opponentTeam);
+                            }
+                        });
+
+                        builder.losingTeams(losingTeams);
                         gameResults.add(builder.build());
                     }
 
@@ -85,6 +85,18 @@ public class Aoe4OppService {
 
         return gameResults;
 
+    }
+
+    public AutocompleteResponseDto autocomplete(String gamertag, String leaderboard) {
+
+        Leaderboard leader = Leaderboard.findByValue(leaderboard);
+
+        if (leader == null) {
+            throw new InvalidRequestException("leaderboard not valid: " + leaderboard);
+        }
+
+        AutocompleteResponse response = aoe4WorldRepository.autocomplete(gamertag, leader);
+        return response.toDto();
     }
 
 }
