@@ -1,5 +1,7 @@
 package com.theboys.aoe.opp.info.repository.http;
 
+import com.theboys.aoe.opp.info.constants.Leaderboard;
+import com.theboys.aoe.opp.info.dto.AutocompleteResponse;
 import com.theboys.aoe.opp.info.dto.GamesPage;
 import com.theboys.aoe.opp.info.dto.PlayerDto;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Component
@@ -32,5 +35,8 @@ public class Aoe4WorldRepository {
         return restTemplate.getForObject(gamesUrl, GamesPage.class);
     }
 
-
+    public AutocompleteResponse autocomplete(String gamertag, Leaderboard leaderboard) {
+        var autocompleteUrl = baseUrl + "/api/v0/players/autocomplete?leaderboard={leaderboard}&query={query}";
+        return restTemplate.getForObject(autocompleteUrl, AutocompleteResponse.class, Map.of("leaderboard", leaderboard.getApiValue(), "query", gamertag));
+    }
 }
