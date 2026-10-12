@@ -4,7 +4,7 @@ services:
     command:
       -url=jdbc:postgresql://db/aoe_opp_info -locations=filesystem:/dbscripts -schemas=public -user=postgres -password=admin -connectRetries=60 migrate
     volumes:
-      - .:/dbscripts
+      - ./src/main/resources/db/migration:/dbscripts
     depends_on:
       - db
 

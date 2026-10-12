@@ -1,5 +1,25 @@
 spring:
   application:
     name: aoe-opp-info
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/aoe_opp_info}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:admin}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
 aoe4world:
   baseUrl: https://aoe4world.com
+#  apiKey: dc04b785cb8942fa82d0e2b61b45dc31
+logging:
+  level:
+    root: INFO
+    com.theboys.aoe.opp.info: DEBUG

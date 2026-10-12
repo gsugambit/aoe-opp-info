@@ -19,4 +19,9 @@ public class Beans {
     public ObjectMapper objectMapper() {
         return new JsonMapper();
     }
+
+    @Bean
+    public com.fasterxml.jackson.databind.ObjectMapper fasterxmlObjectMapper() {
+        return new com.fasterxml.jackson.databind.ObjectMapper();
+    }
 }

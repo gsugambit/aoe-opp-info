@@ -14,8 +14,10 @@ import tools.jackson.databind.ObjectMapper;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,106 +34,157 @@ public class Aoe4OppServiceTest {
 
     @Test
     public void testCollect_NoWinner_BothNull() {
-        Long targetPlayerId = 123L;
-        Long opponentPlayerId = 456L;
+        // given
+        final Long targetPlayerId = 123L;
+        final Long opponentPlayerId = 456L;
 
-        PlayerDto targetPlayerDto = PlayerDto.builder()
+        final PlayerDto targetPlayerDto = PlayerDto.builder()
                 .profileId(targetPlayerId)
                 .name("TargetPlayer")
                 .build();
 
-        GamesPage.TeamPlayer targetTeamPlayer = GamesPage.TeamPlayer.builder()
+        final GamesPage.TeamPlayer targetTeamPlayer = GamesPage.TeamPlayer.builder()
                 .profileId(targetPlayerId)
                 .name("TargetPlayer")
-                .result("null") // Target says null
+                .result("null")
                 .build();
 
-        GamesPage.TeamPlayer opponentTeamPlayer = GamesPage.TeamPlayer.builder()
+        final GamesPage.TeamPlayer opponentTeamPlayer = GamesPage.TeamPlayer.builder()
                 .profileId(opponentPlayerId)
                 .name("OpponentPlayer")
-                .result("null") // Opponent also says null
+                .result("null")
                 .build();
 
-        GamesPage.TeamSlot targetSlot = GamesPage.TeamSlot.builder().player(targetTeamPlayer).build();
-        GamesPage.TeamSlot opponentSlot = GamesPage.TeamSlot.builder().player(opponentTeamPlayer).build();
+        final GamesPage.TeamSlot targetSlot = GamesPage.TeamSlot.builder().player(targetTeamPlayer).build();
+        final GamesPage.TeamSlot opponentSlot = GamesPage.TeamSlot.builder().player(opponentTeamPlayer).build();
 
-        GamesPage.Game game = GamesPage.Game.builder()
+        final GamesPage.Game game = GamesPage.Game.builder()
                 .gameId(1L)
                 .teams(List.of(List.of(targetSlot), List.of(opponentSlot)))
                 .build();
 
-        GamesPage gamesPage = GamesPage.builder()
+        final GamesPage gamesPage = GamesPage.builder()
                 .games(List.of(game))
                 .build();
 
         when(aoe4WorldRepository.retrievePlayer(targetPlayerId)).thenReturn(targetPlayerDto);
-        when(aoe4WorldRepository.retrieveGames(anyLong(), anyList())).thenReturn(gamesPage);
+        when(aoe4WorldRepository.retrieveGames(anyLong(), any(), any(), anyList())).thenReturn(gamesPage);
 
-        List<GameResult> results = aoe4OppService.collect(targetPlayerId);
+        // when
+        final List<GameResult> results = aoe4OppService.collect(targetPlayerId);
 
+        // then
         assertEquals(1, results.size());
-        GameResult result = results.get(0);
-
-        System.out.println("[DEBUG_LOG] Result: " + result);
+        final GameResult result = results.get(0);
 
         assertNull(result.getWinningTeam(), "Winning team should be null if no one won");
-        // We expect BOTH teams to be in losingTeams if it's a "no winner" situation
         assertEquals(2, result.getLosingTeams().size(), "Both teams should be in losing teams");
     }
 
     @Test
     public void testCollect_TeammateWins_TargetNull() {
-        Long targetPlayerId = 123L;
-        Long opponentPlayerId = 456L;
+        // given
+        final Long targetPlayerId = 123L;
+        final Long opponentPlayerId = 456L;
 
-        PlayerDto targetPlayerDto = PlayerDto.builder()
+        final PlayerDto targetPlayerDto = PlayerDto.builder()
                 .profileId(targetPlayerId)
                 .name("TargetPlayer")
                 .build();
 
-        GamesPage.TeamPlayer targetTeamPlayer = GamesPage.TeamPlayer.builder()
+        final GamesPage.TeamPlayer targetTeamPlayer = GamesPage.TeamPlayer.builder()
                 .profileId(targetPlayerId)
                 .name("TargetPlayer")
-                .result("null") // Target says null
+                .result("null")
                 .build();
 
-        GamesPage.TeamPlayer targetTeammate = GamesPage.TeamPlayer.builder()
+        final GamesPage.TeamPlayer targetTeammate = GamesPage.TeamPlayer.builder()
                 .profileId(targetPlayerId + 1)
                 .name("TargetTeammate")
-                .result("win") // Teammate won!
+                .result("win")
                 .build();
 
-        GamesPage.TeamPlayer opponentTeamPlayer = GamesPage.TeamPlayer.builder()
+        final GamesPage.TeamPlayer opponentTeamPlayer = GamesPage.TeamPlayer.builder()
                 .profileId(opponentPlayerId)
                 .name("OpponentPlayer")
-                .result("loss") // Opponent lost
+                .result("loss")
                 .build();
 
-        GamesPage.TeamSlot targetSlot = GamesPage.TeamSlot.builder().player(targetTeamPlayer).build();
-        GamesPage.TeamSlot teammateSlot = GamesPage.TeamSlot.builder().player(targetTeammate).build();
-        GamesPage.TeamSlot opponentSlot = GamesPage.TeamSlot.builder().player(opponentTeamPlayer).build();
+        final GamesPage.TeamSlot targetSlot = GamesPage.TeamSlot.builder().player(targetTeamPlayer).build();
+        final GamesPage.TeamSlot teammateSlot = GamesPage.TeamSlot.builder().player(targetTeammate).build();
+        final GamesPage.TeamSlot opponentSlot = GamesPage.TeamSlot.builder().player(opponentTeamPlayer).build();
 
-        GamesPage.Game game = GamesPage.Game.builder()
+        final GamesPage.Game game = GamesPage.Game.builder()
                 .gameId(1L)
                 .teams(List.of(List.of(targetSlot, teammateSlot), List.of(opponentSlot)))
                 .build();
 
-        GamesPage gamesPage = GamesPage.builder()
+        final GamesPage gamesPage = GamesPage.builder()
                 .games(List.of(game))
                 .build();
 
         when(aoe4WorldRepository.retrievePlayer(targetPlayerId)).thenReturn(targetPlayerDto);
-        when(aoe4WorldRepository.retrieveGames(anyLong(), anyList())).thenReturn(gamesPage);
+        when(aoe4WorldRepository.retrieveGames(anyLong(), any(), any(), anyList())).thenReturn(gamesPage);
 
-        List<GameResult> results = aoe4OppService.collect(targetPlayerId);
+        // when
+        final List<GameResult> results = aoe4OppService.collect(targetPlayerId);
 
+        // then
         assertEquals(1, results.size());
-        GameResult result = results.get(0);
-
-        System.out.println("[DEBUG_LOG] Result: " + result);
+        final GameResult result = results.get(0);
 
         assertNotNull(result.getWinningTeam(), "Winning team should not be null");
-        assertTrue(result.getWinningTeam().getPlayers().stream().anyMatch(p -> p.getProfileId().equals(targetPlayerId)), "Target team should be the winner");
+        assertTrue(
+                result.getWinningTeam().getPlayers().stream().anyMatch(p -> p.getProfileId().equals(targetPlayerId)),
+                "Target team should be the winner"
+        );
         assertEquals(1, result.getLosingTeams().size(), "Only opponent team should be in losing teams");
+    }
+
+    @Test
+    public void testCollect_WithPaginationAndLeaderboard() {
+        // given
+        final Long targetPlayerId = 123L;
+        final Integer page = 1;
+        final Integer perPage = 25;
+        final List<String> leaderboards = List.of("rm_1v1", "qm_1v1");
+
+        final PlayerDto targetPlayerDto = PlayerDto.builder()
+                .profileId(targetPlayerId)
+                .name("TargetPlayer")
+                .build();
+
+        final GamesPage gamesPage = GamesPage.builder()
+                .games(List.of())
+                .build();
+
+        when(aoe4WorldRepository.retrievePlayer(targetPlayerId)).thenReturn(targetPlayerDto);
+        when(aoe4WorldRepository.retrieveGames(targetPlayerId, page, perPage, leaderboards)).thenReturn(gamesPage);
+
+        // when
+        final List<GameResult> results = aoe4OppService.collect(targetPlayerId, page, perPage, leaderboards);
+
+        // then
+        assertTrue(results.isEmpty());
+        verify(aoe4WorldRepository).retrieveGames(targetPlayerId, page, perPage, leaderboards);
+    }
+
+    @Test
+    public void testRetrieveGames() {
+        // given
+        final Long targetPlayerId = 123L;
+        final Integer page = 2;
+        final Integer perPage = 10;
+        final List<String> leaderboards = List.of("qm_2v2", "qm_3v3");
+        final GamesPage gamesPage = GamesPage.builder().page(page).perPage(perPage).build();
+
+        when(aoe4WorldRepository.retrieveGames(targetPlayerId, page, perPage, leaderboards)).thenReturn(gamesPage);
+
+        // when
+        final GamesPage result = aoe4OppService.retrieveGames(targetPlayerId, page, perPage, leaderboards);
+
+        // then
+        assertSame(gamesPage, result);
+        verify(aoe4WorldRepository).retrieveGames(targetPlayerId, page, perPage, leaderboards);
     }
 }
