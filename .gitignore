@@ -3,6 +3,7 @@ matches/
 
 ## Development Environment Fields
 application-local.yml
+helpful-queries.sql
 
 HELP.md
 .gradle
