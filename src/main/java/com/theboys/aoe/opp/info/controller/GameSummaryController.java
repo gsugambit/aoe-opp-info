@@ -1,8 +1,8 @@
 package com.theboys.aoe.opp.info.controller;
 
+import com.theboys.aoe.opp.info.dto.GameAnalysisResponse;
 import com.theboys.aoe.opp.info.dto.MatchupAnalysisRequest;
 import com.theboys.aoe.opp.info.dto.MatchupAnalysisResponse;
-import com.theboys.aoe.opp.info.dto.TimelineMetricsDto;
 import com.theboys.aoe.opp.info.service.GameSummaryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,9 +41,9 @@ public class GameSummaryController {
         return gameSummaryService.getGameSummary(gameId);
     }
 
-    @GetMapping(value = "/{gameId}/timeline", produces = "application/json")
-    public TimelineMetricsDto getTimelineMetrics(@PathVariable final String gameId) {
-        return gameSummaryService.getTimelineMetrics(gameId);
+    @GetMapping(value = "/{gameId}/analysis", produces = "application/json")
+    public GameAnalysisResponse getGameAnalysis(@PathVariable final String gameId) {
+        return gameSummaryService.getGameAnalysis(gameId);
     }
 }
 
