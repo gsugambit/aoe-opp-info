@@ -3,15 +3,13 @@ package com.theboys.aoe.opp.info.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theboys.aoe.opp.info.dao.GameSummaryDao;
+import com.theboys.aoe.opp.info.dto.GameAnalysisResponse;
 import com.theboys.aoe.opp.info.dto.MatchupAnalysisRequest;
 import com.theboys.aoe.opp.info.dto.MatchupAnalysisResponse;
 import com.theboys.aoe.opp.info.dto.MatchupPlayerDto;
+import com.theboys.aoe.opp.info.dto.PlayerGameAnalysisDto;
 import com.theboys.aoe.opp.info.dto.PlayerMatchupResultDto;
 import com.theboys.aoe.opp.info.dto.PlayerSummaryDto;
-import com.theboys.aoe.opp.info.dto.PlayerTimelineDto;
-import com.theboys.aoe.opp.info.dto.TimelineDataPointDto;
-import com.theboys.aoe.opp.info.dto.TimelineMetricsDto;
-import com.theboys.aoe.opp.info.dto.internal.ScrapedGameSummary;
 import com.theboys.aoe.opp.info.exception.BusinessException;
 import com.theboys.aoe.opp.info.exception.NotFoundException;
 import com.theboys.aoe.opp.info.repository.db.GameSummaryDbRepository;
@@ -23,7 +21,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.io.InputStream;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -172,394 +169,6 @@ public class GameSummaryServiceTest {
 
         // when & then
         assertThrows(NotFoundException.class, () -> gameSummaryService.getGameSummary(gameId));
-    }
-
-    @Test
-    public void testGetTimelineMetrics_Found_StructuredPayload() throws Exception {
-        // given
-        final String gameId = "223729268";
-        final String jsonString = """
-                {
-                  "duration": 1800,
-                  "teams": [
-                    [
-                      {
-                        "player": {
-                          "profile_id": 3861757,
-                          "name": "GSUGambit",
-                          "civilization": "english",
-                          "result": "win"
-                        },
-                        "intervals": [
-                          {
-                            "timestamp": 60,
-                            "villagerCount": 8,
-                            "militaryCount": 0,
-                            "totalPopulation": 8
-                          },
-                          {
-                            "timestamp": 120,
-                            "villagerCount": 14,
-                            "militaryCount": 2,
-                            "totalPopulation": 16
-                          }
-                        ]
-                      }
-                    ],
-                    [
-                      {
-                        "player": {
-                          "profile_id": 9999999,
-                          "name": "Opponent",
-                          "civilization": "french",
-                          "result": "loss"
-                        },
-                        "intervals": [
-                          {
-                            "timestamp": 60,
-                            "villagerCount": 7,
-                            "militaryCount": 1,
-                            "totalPopulation": 8
-                          }
-                        ]
-                      }
-                    ]
-                  ]
-                }
-                """;
-
-        final JsonNode node = objectMapper.readTree(jsonString);
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setSummaryData(node);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto timelineMetrics = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals("223729268", timelineMetrics.getGameId());
-        assertEquals(1800, timelineMetrics.getDurationSeconds());
-        assertEquals(2, timelineMetrics.getPlayers().size());
-
-        final PlayerTimelineDto player1 = timelineMetrics.getPlayers().get(0);
-        assertEquals("3861757", player1.getProfileId());
-        assertEquals("GSUGambit", player1.getName());
-        assertEquals("english", player1.getCivilization());
-        assertEquals("win", player1.getResult());
-        assertEquals(2, player1.getDataPoints().size());
-        assertEquals(60, player1.getDataPoints().get(0).getTimestamp());
-        assertEquals(8, player1.getDataPoints().get(0).getVillagerCount());
-        assertEquals(0, player1.getDataPoints().get(0).getMilitaryCount());
-        assertEquals(8, player1.getDataPoints().get(0).getTotalPopulation());
-
-        final PlayerTimelineDto player2 = timelineMetrics.getPlayers().get(1);
-        assertEquals("9999999", player2.getProfileId());
-        assertEquals("Opponent", player2.getName());
-        assertEquals("french", player2.getCivilization());
-        assertEquals("loss", player2.getResult());
-        assertEquals(1, player2.getDataPoints().size());
-        assertEquals(7, player2.getDataPoints().get(0).getVillagerCount());
-        assertEquals(1, player2.getDataPoints().get(0).getMilitaryCount());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_AlternativeFieldNamesAndFallbacks() throws Exception {
-        // given
-        final String gameId = "111222";
-        final String jsonString = """
-                {
-                  "game": {
-                    "duration": 900
-                  },
-                  "players": [
-                    {
-                      "profileId": "123",
-                      "gamerName": "PlayerA",
-                      "civ": "abbasid",
-                      "outcome": "win",
-                      "timeline": [
-                        {
-                          "time": 30,
-                          "vills": 10,
-                          "army": 5
-                        }
-                      ]
-                    }
-                  ]
-                }
-                """;
-
-        final JsonNode node = objectMapper.readTree(jsonString);
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setSummaryData(node);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto timelineMetrics = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals("111222", timelineMetrics.getGameId());
-        assertEquals(900, timelineMetrics.getDurationSeconds());
-        assertEquals(1, timelineMetrics.getPlayers().size());
-
-        final PlayerTimelineDto player = timelineMetrics.getPlayers().get(0);
-        assertEquals("123", player.getProfileId());
-        assertEquals("PlayerA", player.getName());
-        assertEquals("abbasid", player.getCivilization());
-        assertEquals("win", player.getResult());
-        assertEquals(1, player.getDataPoints().size());
-        assertEquals(30, player.getDataPoints().get(0).getTimestamp());
-        assertEquals(10, player.getDataPoints().get(0).getVillagerCount());
-        assertEquals(5, player.getDataPoints().get(0).getMilitaryCount());
-        assertEquals(15, player.getDataPoints().get(0).getTotalPopulation());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_NullOrMissingSummaryData() {
-        // given
-        final String gameId = "empty-game";
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setLeaderboard("rm_solo");
-        dao.setSummaryData(null);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto result = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals("empty-game", result.getGameId());
-        assertEquals("rm_solo", result.getLeaderboard());
-        assertEquals(0, result.getDurationSeconds());
-        assertEquals(0, result.getPlayers().size());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_LeaderboardFallbackToDao() throws Exception {
-        // given
-        final String gameId = "dao-fallback-game";
-        final String jsonString = """
-                {
-                  "duration": 500,
-                  "players": []
-                }
-                """;
-
-        final JsonNode node = objectMapper.readTree(jsonString);
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setLeaderboard("rm_1v1");
-        dao.setSummaryData(node);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto result = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals("dao-fallback-game", result.getGameId());
-        assertEquals("rm_1v1", result.getLeaderboard());
-        assertEquals(500, result.getDurationSeconds());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_LeaderboardNestedInGameNode() throws Exception {
-        // given
-        final String gameId = "nested-game";
-        final String jsonString = """
-                {
-                  "game": {
-                    "duration": 600,
-                    "leaderboard": "rm_team"
-                  },
-                  "players": []
-                }
-                """;
-
-        final JsonNode node = objectMapper.readTree(jsonString);
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setLeaderboard("fallback");
-        dao.setSummaryData(node);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto result = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals("nested-game", result.getGameId());
-        assertEquals("rm_team", result.getLeaderboard());
-        assertEquals(600, result.getDurationSeconds());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_RealMatch250598826() throws Exception {
-        // given
-        final String gameId = "250598826";
-        final JsonNode node;
-        try (final InputStream inputStream = getClass().getResourceAsStream("/samples/match_250598826.json")) {
-            assertNotNull(inputStream);
-            node = objectMapper.readTree(inputStream);
-        }
-
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setSummaryData(node);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto timelineMetrics = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals("250598826", timelineMetrics.getGameId());
-        assertEquals("rm_1v1", timelineMetrics.getLeaderboard());
-        assertEquals("Gorge", timelineMetrics.getMapName());
-        assertEquals(3129, timelineMetrics.getDurationSeconds());
-        assertEquals(2, timelineMetrics.getPlayers().size());
-
-        // Winner is sorted first
-        final PlayerTimelineDto player1 = timelineMetrics.getPlayers().get(0);
-        assertEquals("3861757", player1.getProfileId());
-        assertEquals("GSUGambit", player1.getName());
-        assertEquals("english", player1.getCivilization());
-        assertEquals("win", player1.getResult());
-        assertEquals(122, player1.getApm());
-        assertEquals(153, player1.getDataPoints().size());
-
-        // t = 0s
-        assertEquals(0, player1.getDataPoints().get(0).getTimestamp());
-        assertEquals(6, player1.getDataPoints().get(0).getVillagerCount());
-        assertEquals(1, player1.getDataPoints().get(0).getMilitaryCount());
-        assertEquals(7, player1.getDataPoints().get(0).getTotalPopulation());
-
-        // t = 60s
-        assertEquals(60, player1.getDataPoints().get(3).getTimestamp());
-        assertEquals(8, player1.getDataPoints().get(3).getVillagerCount());
-        assertEquals(1, player1.getDataPoints().get(3).getMilitaryCount());
-        assertEquals(9, player1.getDataPoints().get(3).getTotalPopulation());
-
-        // last data point at t = 3040s
-        final TimelineDataPointDto player1LastPoint = player1.getDataPoints().get(152);
-        assertEquals(3040, player1LastPoint.getTimestamp());
-        assertEquals(119, player1LastPoint.getVillagerCount());
-        assertEquals(65, player1LastPoint.getMilitaryCount());
-        assertEquals(184, player1LastPoint.getTotalPopulation());
-
-        // Loser is sorted second
-        final PlayerTimelineDto player2 = timelineMetrics.getPlayers().get(1);
-        assertEquals("10880067", player2.getProfileId());
-        assertEquals("peter1057285", player2.getName());
-        assertEquals("order_of_the_dragon", player2.getCivilization());
-        assertEquals("loss", player2.getResult());
-        assertEquals(173, player2.getApm());
-        assertEquals(153, player2.getDataPoints().size());
-
-        // t = 0s
-        assertEquals(0, player2.getDataPoints().get(0).getTimestamp());
-        assertEquals(5, player2.getDataPoints().get(0).getVillagerCount());
-        assertEquals(1, player2.getDataPoints().get(0).getMilitaryCount());
-        assertEquals(6, player2.getDataPoints().get(0).getTotalPopulation());
-
-        // t = 60s (index 3: 0, 20, 40, 60)
-        assertEquals(60, player2.getDataPoints().get(3).getTimestamp());
-        assertEquals(7, player2.getDataPoints().get(3).getVillagerCount());
-        assertEquals(1, player2.getDataPoints().get(3).getMilitaryCount());
-        assertEquals(8, player2.getDataPoints().get(3).getTotalPopulation());
-
-        // last data point at t = 3040s (index 152)
-        final TimelineDataPointDto player2LastPoint = player2.getDataPoints().get(152);
-        assertEquals(3040, player2LastPoint.getTimestamp());
-        assertEquals(52, player2LastPoint.getVillagerCount());
-        assertEquals(8, player2LastPoint.getMilitaryCount());
-        assertEquals(60, player2LastPoint.getTotalPopulation());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_MissingBuildOrder() throws Exception {
-        // given
-        final String gameId = "no-build-order";
-        final String jsonString = """
-                {
-                  "duration": 600,
-                  "players": [
-                    {
-                      "profileId": "123",
-                      "name": "PlayerOne",
-                      "civilization": "french",
-                      "result": "win",
-                      "resources": {
-                        "timestamps": [0, 60, 120]
-                      }
-                    }
-                  ]
-                }
-                """;
-        final JsonNode node = objectMapper.readTree(jsonString);
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setSummaryData(node);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto result = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals(1, result.getPlayers().size());
-        final PlayerTimelineDto player = result.getPlayers().get(0);
-        assertEquals(3, player.getDataPoints().size());
-        assertEquals(0, player.getDataPoints().get(0).getVillagerCount());
-        assertEquals(0, player.getDataPoints().get(0).getMilitaryCount());
-        assertEquals(0, player.getDataPoints().get(0).getTotalPopulation());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_MissingTimestamps() throws Exception {
-        // given
-        final String gameId = "no-timestamps";
-        final String jsonString = """
-                {
-                  "duration": 600,
-                  "players": [
-                    {
-                      "profileId": "123",
-                      "name": "PlayerOne",
-                      "civilization": "french",
-                      "result": "win"
-                    }
-                  ]
-                }
-                """;
-        final JsonNode node = objectMapper.readTree(jsonString);
-        final GameSummaryDao dao = new GameSummaryDao();
-        dao.setGameId(gameId);
-        dao.setSummaryData(node);
-
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
-
-        // when
-        final TimelineMetricsDto result = gameSummaryService.getTimelineMetrics(gameId);
-
-        // then
-        assertEquals(1, result.getPlayers().size());
-        assertTrue(result.getPlayers().get(0).getDataPoints().isEmpty());
-    }
-
-    @Test
-    public void testGetTimelineMetrics_NotFound() {
-        // given
-        final String gameId = "nonexistent";
-        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.empty());
-
-        // when & then
-        assertThrows(NotFoundException.class, () -> gameSummaryService.getTimelineMetrics(gameId));
     }
 
     @Test
@@ -862,5 +471,86 @@ public class GameSummaryServiceTest {
         assertEquals(2, response.getResults().size());
         assertEquals(List.of("g2"), response.getResults().get(0).getGameIds());
         assertTrue(response.getResults().get(1).getGameIds().isEmpty());
+    }
+
+    @Test
+    public void testGetGameAnalysis_Success() throws Exception {
+        // given
+        final String gameId = "223729268";
+        final String json = "{\"map\":\"Gorge\",\"duration\":2188,\"leaderboard\":\"rm_1v1\",\"players\":[]}";
+        final JsonNode summaryData = objectMapper.readTree(json);
+
+        final GameSummaryDao dao = new GameSummaryDao();
+        dao.setGameId(gameId);
+        dao.setLeaderboard("rm_1v1");
+        dao.setSummaryData(summaryData);
+
+        final PlayerGameAnalysisDto playerDto = PlayerGameAnalysisDto.builder()
+                .withProfileId("3861757")
+                .withName("GSUGambit")
+                .withCivilization("english")
+                .withResult("win")
+                .withApm(145)
+                .build();
+
+        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.of(dao));
+        when(playerSummaryAnalysisService.analyzeGamePlayers(summaryData)).thenReturn(List.of(playerDto));
+
+        // when
+        final GameAnalysisResponse response = gameSummaryService.getGameAnalysis(gameId);
+
+        // then
+        assertNotNull(response);
+        assertEquals(gameId, response.getGameId());
+        assertEquals("rm_1v1", response.getLeaderboard());
+        assertEquals("Gorge", response.getMapName());
+        assertEquals(2188, response.getDurationSeconds());
+        assertEquals(1, response.getPlayers().size());
+        assertEquals("GSUGambit", response.getPlayers().get(0).getName());
+        verify(gameSummaryDbRepository).findByGameId(gameId);
+        verify(playerSummaryAnalysisService).analyzeGamePlayers(summaryData);
+    }
+
+    @Test
+    public void testGetGameAnalysis_NotFound() {
+        // given
+        final String gameId = "999999";
+        when(gameSummaryDbRepository.findByGameId(gameId)).thenReturn(Optional.empty());
+
+        // when & then
+        assertThrows(NotFoundException.class, () -> gameSummaryService.getGameAnalysis(gameId));
+        verify(gameSummaryDbRepository).findByGameId(gameId);
+    }
+
+    @Test
+    public void testParseGameAnalysis_NullOrEmptySummaryData() {
+        // when
+        final GameAnalysisResponse response = gameSummaryService.parseGameAnalysis("123", null, "rm_solo");
+
+        // then
+        assertNotNull(response);
+        assertEquals("123", response.getGameId());
+        assertEquals("rm_solo", response.getLeaderboard());
+        assertNotNull(response.getPlayers());
+        assertTrue(response.getPlayers().isEmpty());
+    }
+
+    @Test
+    public void testParseGameAnalysis_FallbackLeaderboard() throws Exception {
+        // given
+        final String json = "{\"map\":\"Dry Arabia\",\"duration\":1200}";
+        final JsonNode summaryData = objectMapper.readTree(json);
+        when(playerSummaryAnalysisService.analyzeGamePlayers(summaryData)).thenReturn(Collections.emptyList());
+
+        // when
+        final GameAnalysisResponse response = gameSummaryService.parseGameAnalysis("123", summaryData, "rm_fallback");
+
+        // then
+        assertNotNull(response);
+        assertEquals("123", response.getGameId());
+        assertEquals("rm_fallback", response.getLeaderboard());
+        assertEquals("Dry Arabia", response.getMapName());
+        assertEquals(1200, response.getDurationSeconds());
+        assertTrue(response.getPlayers().isEmpty());
     }
 }

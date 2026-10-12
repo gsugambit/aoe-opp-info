@@ -1,8 +1,10 @@
 package com.theboys.aoe.opp.info.service;
 
+import com.theboys.aoe.opp.info.constants.Civilization;
 import com.theboys.aoe.opp.info.constants.Leaderboard;
 import com.theboys.aoe.opp.info.dto.AutocompleteResponse;
 import com.theboys.aoe.opp.info.dto.AutocompleteResponseDto;
+import com.theboys.aoe.opp.info.dto.CivilizationDto;
 import com.theboys.aoe.opp.info.dto.GamesPage;
 import com.theboys.aoe.opp.info.dto.PlayerDto;
 import com.theboys.aoe.opp.info.dto.internal.GameResult;
@@ -13,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -127,6 +131,16 @@ public class Aoe4OppService {
 
         final AutocompleteResponse response = aoe4WorldRepository.autocomplete(gamertag, leader);
         return response.toDto();
+    }
+
+    public List<CivilizationDto> getCivilizations() {
+        return Arrays.stream(Civilization.values())
+                .sorted(Comparator.comparing(Civilization::getDisplayName, String.CASE_INSENSITIVE_ORDER))
+                .map(civ -> CivilizationDto.builder()
+                        .withValue(civ.getValue())
+                        .withDisplayName(civ.getDisplayName())
+                        .build())
+                .toList();
     }
 
 }

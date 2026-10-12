@@ -1,12 +1,12 @@
 package com.theboys.aoe.opp.info.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.theboys.aoe.opp.info.dto.GameAnalysisResponse;
 import com.theboys.aoe.opp.info.dto.MatchupAnalysisRequest;
 import com.theboys.aoe.opp.info.dto.MatchupAnalysisResponse;
 import com.theboys.aoe.opp.info.dto.MatchupPlayerDto;
 import com.theboys.aoe.opp.info.dto.PlayerMatchupResultDto;
 import com.theboys.aoe.opp.info.dto.PlayerSummaryDto;
-import com.theboys.aoe.opp.info.dto.TimelineMetricsDto;
 import com.theboys.aoe.opp.info.service.GameSummaryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -105,24 +105,26 @@ public class GameSummaryControllerTest {
     }
 
     @Test
-    public void testGetTimelineMetrics() {
+    public void testGetGameAnalysis() {
         // given
         final String gameId = "223729268";
-        final TimelineMetricsDto expectedDto = TimelineMetricsDto.builder()
+        final GameAnalysisResponse expectedResponse = GameAnalysisResponse.builder()
                 .withGameId(gameId)
                 .withLeaderboard("rm_1v1")
-                .withDurationSeconds(1500)
+                .withMapName("Gorge")
+                .withDurationSeconds(2188)
                 .withPlayers(Collections.emptyList())
                 .build();
 
-        when(gameSummaryService.getTimelineMetrics(gameId)).thenReturn(expectedDto);
+        when(gameSummaryService.getGameAnalysis(gameId)).thenReturn(expectedResponse);
 
         // when
-        final TimelineMetricsDto actualDto = gameSummaryController.getTimelineMetrics(gameId);
+        final GameAnalysisResponse actualResponse = gameSummaryController.getGameAnalysis(gameId);
 
         // then
-        assertEquals(expectedDto, actualDto);
-        assertEquals("rm_1v1", actualDto.getLeaderboard());
-        verify(gameSummaryService).getTimelineMetrics(gameId);
+        assertEquals(expectedResponse, actualResponse);
+        assertEquals("rm_1v1", actualResponse.getLeaderboard());
+        assertEquals("Gorge", actualResponse.getMapName());
+        verify(gameSummaryService).getGameAnalysis(gameId);
     }
 }

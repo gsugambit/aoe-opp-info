@@ -1,5 +1,6 @@
 package com.theboys.aoe.opp.info.service;
 
+import com.theboys.aoe.opp.info.dto.CivilizationDto;
 import com.theboys.aoe.opp.info.dto.GamesPage;
 import com.theboys.aoe.opp.info.dto.PlayerDto;
 import com.theboys.aoe.opp.info.dto.internal.GameResult;
@@ -186,5 +187,19 @@ public class Aoe4OppServiceTest {
         // then
         assertSame(gamesPage, result);
         verify(aoe4WorldRepository).retrieveGames(targetPlayerId, page, perPage, leaderboards);
+    }
+
+    @Test
+    public void testGetCivilizations() {
+        // when
+        final List<CivilizationDto> civilizations = aoe4OppService.getCivilizations();
+
+        // then
+        assertNotNull(civilizations);
+        assertEquals(23, civilizations.size());
+        assertEquals("Abbasid Dynasty", civilizations.get(0).getDisplayName());
+        assertEquals("abbasid_dynasty", civilizations.get(0).getValue());
+        assertEquals("Zhu Xi's Legacy", civilizations.get(22).getDisplayName());
+        assertEquals("zhu_xis_legacy", civilizations.get(22).getValue());
     }
 }

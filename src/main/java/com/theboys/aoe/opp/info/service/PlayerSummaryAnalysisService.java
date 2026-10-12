@@ -16,8 +16,16 @@ public class PlayerSummaryAnalysisService {
 
     private static final String TOWN_CENTER_KEYWORD = "town_center";
     private static final String VILLAGER_KEYWORD = "villager";
-    private static final String TRADE_CART_KEYWORD = "trade_cart";
     private static final String UNIT_TYPE = "Unit";
+    private static final List<String> TRADER_KEYWORDS = List.of(
+            "trade_cart",
+            "trader_cart",
+            "camel_trader",
+            "reindeer_trader",
+            "treasure_caravan",
+            "pilgrim",
+            "trade_ship"
+    );
     private static final List<String> IGNORED_LANDMARK_KEYWORDS = List.of(
             "fortress",
             "capital town center",
@@ -30,7 +38,7 @@ public class PlayerSummaryAnalysisService {
             "mehter", "dervish", "unit_khan_1_mon", "shinto_priest", "general_ship",
             "jeanne_villager", "jeanne_archer", "horseman_grassland", "shaolin_monk",
             "jeanne_ranged_monarch", "imperial_official", "jeanne_manatarms", "transport",
-            "trade_ship", "trade_cart", "fishing_boat", "camel_trader", "yatai",
+            "trade_ship", "trade_cart", "trader_cart", "fishing_boat", "camel_trader", "yatai",
             "cattle", "reindeer_trader", "emissary", "fortress", "treasure_caravan",
             "jeanne_melee_monarch", "jeanne_melee_knight", "pilgrim", "gilded_villager"
     );
@@ -90,6 +98,151 @@ public class PlayerSummaryAnalysisService {
                 .withAdditionalTownCenters(townCenterSummary)
                 .withLandmarks(landmarkSummaries)
                 .build();
+    }
+
+    public List<PlayerGameAnalysisDto> analyzeGamePlayers(final JsonNode summaryData) {
+        if (summaryData == null || summaryData.isNull() || summaryData.isMissingNode()) {
+            return Collections.emptyList();
+        }
+
+        final List<JsonNode> playerNodes = extractAllPlayerNodes(summaryData);
+        if (playerNodes.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        final List<PlayerGameAnalysisDto> playerGameAnalysisList = new ArrayList<>();
+        for (final JsonNode playerNode : playerNodes) {
+            final PlayerGameAnalysisDto analysis = analyzeSinglePlayerGame(playerNode);
+            if (analysis != null) {
+                playerGameAnalysisList.add(analysis);
+            }
+        }
+
+        return sortPlayersByOutcome(playerGameAnalysisList);
+    }
+
+    public PlayerGameAnalysisDto analyzeSinglePlayerGame(final JsonNode playerNode) {
+        if (playerNode == null || playerNode.isNull() || playerNode.isMissingNode()) {
+            return null;
+        }
+
+        final JsonNode playerObj = playerNode.has("player") ? playerNode.path("player") : playerNode;
+
+        final String profileId = getFirstText(playerObj, "profileId", "profile_id", "id");
+        final String name = getFirstText(playerObj, "name", "gamerName", "username");
+        final String civilization = getFirstText(playerObj, "civilization", "civ");
+        final String result = getFirstText(playerObj, "result", "outcome");
+        final Integer apm = getFirstInteger(playerNode, playerObj, "apm", "avgApm", "actionsPerMinute");
+
+        final List<JsonNode> singlePlayerList = Collections.singletonList(playerNode);
+
+        final AgeUpSummaryDto ageUpSummary = calculateAgeUpSummary(singlePlayerList);
+        final VillagerSummaryDto villagerSummary = calculateVillagerSummary(singlePlayerList, 1);
+        final TraderSummaryDto traderSummary = calculateTraderSummary(singlePlayerList, 1);
+        final List<MilitaryUnitSummaryDto> militarySummary = calculateMilitarySummary(singlePlayerList, 1);
+        final TownCenterSummaryDto townCenterSummary = calculateTownCenterSummary(singlePlayerList, 1);
+        final List<LandmarkSummaryDto> landmarkSummaries = calculateLandmarkSummaries(singlePlayerList, 1);
+
+        return PlayerGameAnalysisDto.builder()
+                .withProfileId(profileId)
+                .withName(name)
+                .withCivilization(civilization)
+                .withResult(result)
+                .withApm(apm)
+                .withAgeUpTimings(ageUpSummary)
+                .withVillagerProduction(villagerSummary)
+                .withTraderProduction(traderSummary)
+                .withMilitaryProduction(militarySummary)
+                .withAdditionalTownCenters(townCenterSummary)
+                .withLandmarks(landmarkSummaries)
+                .build();
+    }
+
+    List<JsonNode> extractAllPlayerNodes(final JsonNode summaryData) {
+        if (summaryData == null || summaryData.isNull() || summaryData.isMissingNode()) {
+            return Collections.emptyList();
+        }
+
+        final List<JsonNode> playerNodes = new ArrayList<>();
+        final JsonNode teamsNode = summaryData.path("teams");
+        if (teamsNode.isArray()) {
+            for (final JsonNode teamElement : teamsNode) {
+                if (teamElement.isArray()) {
+                    for (final JsonNode playerElement : teamElement) {
+                        playerNodes.add(playerElement);
+                    }
+                } else if (teamElement.isObject()) {
+                    final JsonNode nestedPlayers = teamElement.path("players");
+                    if (nestedPlayers.isArray()) {
+                        for (final JsonNode playerElement : nestedPlayers) {
+                            playerNodes.add(playerElement);
+                        }
+                    } else {
+                        playerNodes.add(teamElement);
+                    }
+                }
+            }
+        }
+
+        final JsonNode playersNode = summaryData.path("players");
+        if (playersNode.isArray() && playerNodes.isEmpty()) {
+            for (final JsonNode playerElement : playersNode) {
+                playerNodes.add(playerElement);
+            }
+        }
+
+        return playerNodes;
+    }
+
+    private List<PlayerGameAnalysisDto> sortPlayersByOutcome(final List<PlayerGameAnalysisDto> players) {
+        if (players == null || players.isEmpty()) {
+            return Collections.emptyList();
+        }
+        final List<PlayerGameAnalysisDto> sorted = new ArrayList<>(players);
+        sorted.sort((p1, p2) -> {
+            final int rank1 = getOutcomeRank(p1 != null ? p1.getResult() : null);
+            final int rank2 = getOutcomeRank(p2 != null ? p2.getResult() : null);
+            return Integer.compare(rank1, rank2);
+        });
+        return sorted;
+    }
+
+    private int getOutcomeRank(final String result) {
+        if (result == null) {
+            return 2;
+        }
+        final String lower = result.trim().toLowerCase();
+        if ("win".equals(lower) || "won".equals(lower) || "victory".equals(lower)) {
+            return 0;
+        }
+        if ("loss".equals(lower) || "lost".equals(lower) || "defeat".equals(lower)) {
+            return 1;
+        }
+        return 2;
+    }
+
+    private String getFirstText(final JsonNode node, final String... fieldNames) {
+        if (node == null) {
+            return null;
+        }
+        for (final String field : fieldNames) {
+            if (node.hasNonNull(field) && !node.get(field).asText().trim().isEmpty()) {
+                return node.get(field).asText().trim();
+            }
+        }
+        return null;
+    }
+
+    private Integer getFirstInteger(final JsonNode primary, final JsonNode fallback, final String... fieldNames) {
+        for (final String field : fieldNames) {
+            if (primary != null && primary.hasNonNull(field)) {
+                return primary.get(field).asInt();
+            }
+            if (fallback != null && fallback.hasNonNull(field)) {
+                return fallback.get(field).asInt();
+            }
+        }
+        return null;
     }
 
     private JsonNode extractPlayerNode(
@@ -229,37 +382,17 @@ public class PlayerSummaryAnalysisService {
 
             for (final JsonNode item : buildOrder) {
                 final String type = item.hasNonNull("type") ? item.get("type").asText() : "";
-                final String icon = item.hasNonNull("icon") ? item.get("icon").asText().toLowerCase() : "";
+                final String icon = item.hasNonNull("icon") ? item.get("icon").asText() : "";
 
-                if (UNIT_TYPE.equalsIgnoreCase(type) && icon.contains(TRADE_CART_KEYWORD)) {
-                    final JsonNode unknown = item.get("unknown");
-                    if (unknown != null) {
-                        if (unknown.isObject()) {
-                            for (final JsonNode timeArrayNode : unknown) {
-                                if (timeArrayNode != null && timeArrayNode.isArray()) {
-                                    for (final JsonNode timeNode : timeArrayNode) {
-                                        final int time = timeNode.asInt();
-                                        final Age age = boundaries.determineAge(time);
-                                        switch (age) {
-                                            case DARK -> totalDark++;
-                                            case FEUDAL -> totalFeudal++;
-                                            case CASTLE -> totalCastle++;
-                                            case IMPERIAL -> totalImperial++;
-                                        }
-                                    }
-                                }
-                            }
-                        } else if (unknown.isArray()) {
-                            for (final JsonNode timeNode : unknown) {
-                                final int time = timeNode.asInt();
-                                final Age age = boundaries.determineAge(time);
-                                switch (age) {
-                                    case DARK -> totalDark++;
-                                    case FEUDAL -> totalFeudal++;
-                                    case CASTLE -> totalCastle++;
-                                    case IMPERIAL -> totalImperial++;
-                                }
-                            }
+                if (UNIT_TYPE.equalsIgnoreCase(type) && isTraderUnit(icon)) {
+                    final List<Integer> timestamps = extractTraderTimestamps(item);
+                    for (final int time : timestamps) {
+                        final Age age = boundaries.determineAge(time);
+                        switch (age) {
+                            case DARK -> totalDark++;
+                            case FEUDAL -> totalFeudal++;
+                            case CASTLE -> totalCastle++;
+                            case IMPERIAL -> totalImperial++;
                         }
                     }
                 }
@@ -279,6 +412,48 @@ public class PlayerSummaryAnalysisService {
                 .withImperialAge(avgImperial)
                 .withTotal(avgTotal)
                 .build();
+    }
+
+    boolean isTraderUnit(final String icon) {
+        if (StringUtils.isBlank(icon)) {
+            return false;
+        }
+        final String lower = icon.toLowerCase();
+        for (final String keyword : TRADER_KEYWORDS) {
+            if (lower.contains(keyword)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private List<Integer> extractTraderTimestamps(final JsonNode item) {
+        final List<Integer> timestamps = new ArrayList<>();
+        final JsonNode unknown = item.get("unknown");
+        if (unknown != null) {
+            if (unknown.isObject()) {
+                for (final JsonNode timeArrayNode : unknown) {
+                    if (timeArrayNode != null && timeArrayNode.isArray()) {
+                        for (final JsonNode timeNode : timeArrayNode) {
+                            timestamps.add(timeNode.asInt());
+                        }
+                    }
+                }
+            } else if (unknown.isArray()) {
+                for (final JsonNode timeNode : unknown) {
+                    timestamps.add(timeNode.asInt());
+                }
+            }
+        }
+        if (timestamps.isEmpty()) {
+            final JsonNode finished = item.get("finished");
+            if (finished != null && finished.isArray()) {
+                for (final JsonNode timeNode : finished) {
+                    timestamps.add(timeNode.asInt());
+                }
+            }
+        }
+        return timestamps;
     }
 
     private List<MilitaryUnitSummaryDto> calculateMilitarySummary(

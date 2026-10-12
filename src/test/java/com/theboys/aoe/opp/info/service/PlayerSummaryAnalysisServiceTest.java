@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theboys.aoe.opp.info.dto.AgeUpSummaryDto;
 import com.theboys.aoe.opp.info.dto.LandmarkSummaryDto;
 import com.theboys.aoe.opp.info.dto.MilitaryUnitSummaryDto;
+import com.theboys.aoe.opp.info.dto.PlayerGameAnalysisDto;
 import com.theboys.aoe.opp.info.dto.PlayerSummaryDto;
 import com.theboys.aoe.opp.info.dto.TownCenterSummaryDto;
 import com.theboys.aoe.opp.info.dto.TraderSummaryDto;
@@ -1239,6 +1240,407 @@ public class PlayerSummaryAnalysisServiceTest {
     }
 
     @Test
+    public void analyzePlayerSummaries_CamelTraderProduction() throws Exception {
+        // given
+        final String gameJson = """
+                {
+                  "players": [
+                    {
+                      "profileId": 12345,
+                      "name": "AyyubidPlayer",
+                      "actions": {
+                        "feudalAge": [240],
+                        "castleAge": [540],
+                        "imperialAge": [1100]
+                      },
+                      "buildOrder": [
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/ayyubids/units/camel_trader",
+                          "unknown": {
+                            "14": [260, 280, 300, 600, 1200]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode gameNode = objectMapper.readTree(gameJson);
+
+        // when
+        final PlayerSummaryDto summary = analysisService.analyzePlayerSummaries(
+                "12345",
+                "AyyubidPlayer",
+                List.of(gameNode)
+        );
+
+        // then
+        assertNotNull(summary);
+        final TraderSummaryDto traders = summary.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(0.0, traders.getDarkAge());
+        assertEquals(3.0, traders.getFeudalAge());
+        assertEquals(1.0, traders.getCastleAge());
+        assertEquals(1.0, traders.getImperialAge());
+        assertEquals(5.0, traders.getTotal());
+
+        // Ensure camel_trader is blacklisted from military
+        assertTrue(summary.getMilitaryProduction().isEmpty());
+    }
+
+    @Test
+    public void analyzePlayerSummaries_ReindeerTraderProduction() throws Exception {
+        // given
+        final String gameJson = """
+                {
+                  "players": [
+                    {
+                      "profileId": 12345,
+                      "name": "MongolPlayer",
+                      "actions": {
+                        "feudalAge": [300],
+                        "castleAge": [600]
+                      },
+                      "buildOrder": [
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/mongols/units/reindeer_trader",
+                          "unknown": [150, 350, 700]
+                        }
+                      ]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode gameNode = objectMapper.readTree(gameJson);
+
+        // when
+        final PlayerSummaryDto summary = analysisService.analyzePlayerSummaries(
+                "12345",
+                "MongolPlayer",
+                List.of(gameNode)
+        );
+
+        // then
+        assertNotNull(summary);
+        final TraderSummaryDto traders = summary.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(1.0, traders.getDarkAge());
+        assertEquals(1.0, traders.getFeudalAge());
+        assertEquals(1.0, traders.getCastleAge());
+        assertEquals(0.0, traders.getImperialAge());
+        assertEquals(3.0, traders.getTotal());
+    }
+
+    @Test
+    public void analyzePlayerSummaries_TreasureCaravanProduction() throws Exception {
+        // given
+        final String gameJson = """
+                {
+                  "players": [
+                    {
+                      "profileId": 12345,
+                      "name": "CaravanPlayer",
+                      "actions": {
+                        "feudalAge": [300]
+                      },
+                      "buildOrder": [
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/common/units/treasure_caravan",
+                          "unknown": {
+                            "1": [350, 400]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode gameNode = objectMapper.readTree(gameJson);
+
+        // when
+        final PlayerSummaryDto summary = analysisService.analyzePlayerSummaries(
+                "12345",
+                "CaravanPlayer",
+                List.of(gameNode)
+        );
+
+        // then
+        assertNotNull(summary);
+        final TraderSummaryDto traders = summary.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(0.0, traders.getDarkAge());
+        assertEquals(2.0, traders.getFeudalAge());
+        assertEquals(2.0, traders.getTotal());
+    }
+
+    @Test
+    public void analyzePlayerSummaries_PilgrimProduction() throws Exception {
+        // given
+        final String gameJson = """
+                {
+                  "players": [
+                    {
+                      "profileId": 12345,
+                      "name": "ByzantinePlayer",
+                      "actions": {
+                        "feudalAge": [300],
+                        "castleAge": [600]
+                      },
+                      "buildOrder": [
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/byzantines/units/pilgrim",
+                          "unknown": {
+                            "1": [200, 400, 800]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode gameNode = objectMapper.readTree(gameJson);
+
+        // when
+        final PlayerSummaryDto summary = analysisService.analyzePlayerSummaries(
+                "12345",
+                "ByzantinePlayer",
+                List.of(gameNode)
+        );
+
+        // then
+        assertNotNull(summary);
+        final TraderSummaryDto traders = summary.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(1.0, traders.getDarkAge());
+        assertEquals(1.0, traders.getFeudalAge());
+        assertEquals(1.0, traders.getCastleAge());
+        assertEquals(3.0, traders.getTotal());
+    }
+
+    @Test
+    public void analyzePlayerSummaries_TradeShipProduction_FinishedArray() throws Exception {
+        // given
+        final String gameJson = """
+                {
+                  "players": [
+                    {
+                      "profileId": 12345,
+                      "name": "NavalPlayer",
+                      "actions": {
+                        "feudalAge": [300],
+                        "castleAge": [600],
+                        "imperialAge": [1200]
+                      },
+                      "buildOrder": [
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/common/units/trade_ship",
+                          "finished": [180, 320, 340, 750, 1300]
+                        }
+                      ]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode gameNode = objectMapper.readTree(gameJson);
+
+        // when
+        final PlayerSummaryDto summary = analysisService.analyzePlayerSummaries(
+                "12345",
+                "NavalPlayer",
+                List.of(gameNode)
+        );
+
+        // then
+        assertNotNull(summary);
+        final TraderSummaryDto traders = summary.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(1.0, traders.getDarkAge());
+        assertEquals(2.0, traders.getFeudalAge());
+        assertEquals(1.0, traders.getCastleAge());
+        assertEquals(1.0, traders.getImperialAge());
+        assertEquals(5.0, traders.getTotal());
+
+        // Trade ship should not be considered a military ship
+        assertTrue(summary.getMilitaryProduction().isEmpty());
+    }
+
+    @Test
+    public void analyzePlayerSummaries_TraderCartVariant() throws Exception {
+        // given
+        final String gameJson = """
+                {
+                  "players": [
+                    {
+                      "profileId": 12345,
+                      "name": "TraderCartPlayer",
+                      "actions": {
+                        "feudalAge": [300]
+                      },
+                      "buildOrder": [
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/common/units/trader_cart",
+                          "finished": [350, 450]
+                        }
+                      ]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode gameNode = objectMapper.readTree(gameJson);
+
+        // when
+        final PlayerSummaryDto summary = analysisService.analyzePlayerSummaries(
+                "12345",
+                "TraderCartPlayer",
+                List.of(gameNode)
+        );
+
+        // then
+        assertNotNull(summary);
+        final TraderSummaryDto traders = summary.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(0.0, traders.getDarkAge());
+        assertEquals(2.0, traders.getFeudalAge());
+        assertEquals(2.0, traders.getTotal());
+    }
+
+    @Test
+    public void analyzePlayerSummaries_MixedTraderUnitsAndStructures() throws Exception {
+        // given
+        final String gameJson = """
+                {
+                  "players": [
+                    {
+                      "profileId": 12345,
+                      "name": "MixedTradePlayer",
+                      "actions": {
+                        "feudalAge": [300],
+                        "castleAge": [600]
+                      },
+                      "buildOrder": [
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/ayyubids/units/camel_trader",
+                          "unknown": {
+                            "14": [310, 320]
+                          }
+                        },
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/common/units/trade_ship",
+                          "finished": [150, 650]
+                        },
+                        {
+                          "type": "Unit",
+                          "icon": "icons/races/common/units/trade_cart",
+                          "unknown": [400]
+                        }
+                      ]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode gameNode = objectMapper.readTree(gameJson);
+
+        // when
+        final PlayerSummaryDto summary = analysisService.analyzePlayerSummaries(
+                "12345",
+                "MixedTradePlayer",
+                List.of(gameNode)
+        );
+
+        // then
+        assertNotNull(summary);
+        final TraderSummaryDto traders = summary.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(1.0, traders.getDarkAge());   // trade_ship @ 150
+        assertEquals(3.0, traders.getFeudalAge()); // camel_trader @ 310, 320, trade_cart @ 400
+        assertEquals(1.0, traders.getCastleAge()); // trade_ship @ 650
+        assertEquals(0.0, traders.getImperialAge());
+        assertEquals(5.0, traders.getTotal());
+    }
+
+    @Test
+    public void testIsTraderUnit() {
+        // positive matches
+        assertTrue(analysisService.isTraderUnit("icons/races/common/units/trade_cart"));
+        assertTrue(analysisService.isTraderUnit("icons/races/common/units/trader_cart"));
+        assertTrue(analysisService.isTraderUnit("icons/races/ayyubids/units/camel_trader"));
+        assertTrue(analysisService.isTraderUnit("icons/races/mongols/units/reindeer_trader"));
+        assertTrue(analysisService.isTraderUnit("icons/races/common/units/treasure_caravan"));
+        assertTrue(analysisService.isTraderUnit("icons/races/byzantines/units/pilgrim"));
+        assertTrue(analysisService.isTraderUnit("icons/races/common/units/trade_ship"));
+        assertTrue(analysisService.isTraderUnit("TRADE_CART"));
+        assertTrue(analysisService.isTraderUnit("CAMEL_TRADER_AGE_2"));
+
+        // negative matches
+        assertFalse(analysisService.isTraderUnit(null));
+        assertFalse(analysisService.isTraderUnit(""));
+        assertFalse(analysisService.isTraderUnit("   "));
+        assertFalse(analysisService.isTraderUnit("icons/races/common/units/villager"));
+        assertFalse(analysisService.isTraderUnit("icons/races/common/units/knight"));
+        assertFalse(analysisService.isTraderUnit("icons/races/common/units/scout"));
+    }
+
+    @Test
+    public void analyzeSinglePlayerGame_WithTraderUnits() throws Exception {
+        // given
+        final String playerJson = """
+                {
+                  "profileId": 9999,
+                  "name": "SingleTraderPlayer",
+                  "civilization": "ayyubids",
+                  "result": "win",
+                  "actions": {
+                    "feudalAge": [300],
+                    "castleAge": [600]
+                  },
+                  "buildOrder": [
+                    {
+                      "type": "Unit",
+                      "icon": "icons/races/ayyubids/units/camel_trader",
+                      "unknown": {
+                        "14": [310, 320, 330]
+                      }
+                    },
+                    {
+                      "type": "Unit",
+                      "icon": "icons/races/common/units/trade_ship",
+                      "finished": [120, 650]
+                    }
+                  ]
+                }
+                """;
+        final JsonNode playerNode = objectMapper.readTree(playerJson);
+
+        // when
+        final PlayerGameAnalysisDto analysis = analysisService.analyzeSinglePlayerGame(playerNode);
+
+        // then
+        assertNotNull(analysis);
+        assertEquals("9999", analysis.getProfileId());
+        assertEquals("SingleTraderPlayer", analysis.getName());
+        assertEquals("ayyubids", analysis.getCivilization());
+        assertEquals("win", analysis.getResult());
+
+        final TraderSummaryDto traders = analysis.getTraderProduction();
+        assertNotNull(traders);
+        assertEquals(1.0, traders.getDarkAge());
+        assertEquals(3.0, traders.getFeudalAge());
+        assertEquals(1.0, traders.getCastleAge());
+        assertEquals(0.0, traders.getImperialAge());
+        assertEquals(5.0, traders.getTotal());
+
+        assertTrue(analysis.getMilitaryProduction().isEmpty());
+    }
+
+    @Test
     public void analyzePlayerSummaries_ExpandedMilitaryUnits_AllCategoriesAndPrecedence() throws Exception {
         // given
         final String gameJson = """
@@ -1649,5 +2051,94 @@ public class PlayerSummaryAnalysisServiceTest {
         assertNull(analysisService.extractMilitaryUnitName("mehter"));
         assertNull(analysisService.extractMilitaryUnitName("jeanne_villager"));
         assertNull(analysisService.extractMilitaryUnitName("gilded_villager"));
+    }
+
+    @Test
+    public void analyzeGamePlayers_SampleMatch_250598826() {
+        // when
+        final List<PlayerGameAnalysisDto> players = analysisService.analyzeGamePlayers(sampleMatchNode);
+
+        // then
+        assertNotNull(players);
+        assertEquals(2, players.size());
+
+        // Winner should be first due to sortPlayersByOutcome (GSUGambit won)
+        final PlayerGameAnalysisDto winner = players.get(0);
+        assertEquals("3861757", winner.getProfileId());
+        assertEquals("GSUGambit", winner.getName());
+        assertEquals("win", winner.getResult());
+
+        // Loser is peter1057285
+        final PlayerGameAnalysisDto loser = players.get(1);
+        assertEquals("10880067", loser.getProfileId());
+        assertEquals("peter1057285", loser.getName());
+        assertEquals("loss", loser.getResult());
+        assertEquals(173, loser.getApm());
+
+        // Timings for peter1057285
+        assertNotNull(loser.getAgeUpTimings());
+        assertEquals(341.0, loser.getAgeUpTimings().getAverageFeudalAgeSeconds());
+        assertEquals(706.0, loser.getAgeUpTimings().getAverageCastleAgeSeconds());
+        assertEquals(1889.0, loser.getAgeUpTimings().getAverageImperialAgeSeconds());
+
+        // Villagers for peter1057285
+        assertNotNull(loser.getVillagerProduction());
+        assertEquals(19.0, loser.getVillagerProduction().getDarkAge());
+        assertEquals(13.0, loser.getVillagerProduction().getFeudalAge());
+        assertEquals(26.0, loser.getVillagerProduction().getCastleAge());
+        assertEquals(16.0, loser.getVillagerProduction().getImperialAge());
+        assertEquals(74.0, loser.getVillagerProduction().getTotal());
+
+        // Town Centers for peter1057285
+        final TownCenterSummaryDto tcs = loser.getAdditionalTownCenters();
+        assertNotNull(tcs);
+        assertEquals(0.0, tcs.getDarkAge());
+        assertEquals(0.0, tcs.getFeudalAge());
+        assertEquals(0.0, tcs.getCastleAge());
+        assertEquals(0.0, tcs.getImperialAge());
+        assertEquals(0.0, tcs.getTotal());
+
+        // Military
+        assertNotNull(loser.getMilitaryProduction());
+        assertFalse(loser.getMilitaryProduction().isEmpty());
+
+        // Landmarks
+        assertNotNull(loser.getLandmarks());
+        assertFalse(loser.getLandmarks().isEmpty());
+    }
+
+    @Test
+    public void analyzeGamePlayers_KnightsTemplarMatch_223729268() {
+        // when
+        final List<PlayerGameAnalysisDto> players = analysisService.analyzeGamePlayers(knightsTemplarMatchNode);
+
+        // then
+        assertNotNull(players);
+        assertEquals(4, players.size());
+
+        final PlayerGameAnalysisDto p1 = players.stream()
+                .filter(p -> "3861757".equals(p.getProfileId()))
+                .findFirst()
+                .orElse(null);
+        assertNotNull(p1);
+        assertEquals("GSUGambit", p1.getName());
+        assertEquals("english", p1.getCivilization());
+        assertEquals("win", p1.getResult());
+        assertNotNull(p1.getAgeUpTimings());
+        assertNotNull(p1.getVillagerProduction());
+        assertNotNull(p1.getMilitaryProduction());
+        assertNotNull(p1.getLandmarks());
+    }
+
+    @Test
+    public void analyzeGamePlayers_NullOrEmptyNode() {
+        // when & then
+        assertTrue(analysisService.analyzeGamePlayers(null).isEmpty());
+        assertTrue(analysisService.analyzeGamePlayers(objectMapper.createObjectNode()).isEmpty());
+    }
+
+    @Test
+    public void analyzeSinglePlayerGame_NullNode() {
+        assertNull(analysisService.analyzeSinglePlayerGame(null));
     }
 }
